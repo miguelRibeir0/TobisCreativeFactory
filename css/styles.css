@@ -2,3 +2,137 @@
     margin: 0;
     padding: 0;
 }
+body {
+    min-height: 100vh;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 500;
+}
+ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    padding: 50px 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+}
+a:visited {
+    color: initial;
+}
+
+.navLink {
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    border-bottom: 4px solid transparent; /* so items dont move on hover */
+}
+.navLink:nth-child(2):hover {
+    border-bottom: 4px solid orange;
+}
+.navLink:nth-child(3):hover {
+    border-bottom: 4px solid blue;
+}
+.navLink:nth-child(4):hover {
+    border-bottom: 4px solid green;
+}
+.navLink:nth-child(5):hover {
+    border-bottom: 4px solid purple;
+}
+.navLogo {
+    margin-bottom: 40px; 
+}
+.navLogo img {
+    width: 200px;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blockGrid {         /* defines the grid that contains our navigation blocks */
+    width: calc(100% - 300px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin: 80px 0px;
+}
+
+.block {
+    background-color: red;
+}
+.block:not(:last-child) {
+    margin-bottom: 80px;
+}
+.large {
+    width: 1400px;
+    height: 500px;
+}
+.large:nth-child(1) {
+    background-image: url("../images/tobishallway.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+.large:nth-child(4) {
+    background-image: url("../images/ticket.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.medium {
+    width: 800px;
+    height: 800px;
+    background-image: url("../images/girlBW.jpeg");
+    background-position: top;
+    background-size: 100%;
+}
+.small {
+    width: 500px;
+    height: 800px;
+    background-color: chocolate;
+    margin-left: 100px;
+    background-image: url("../images/calendario.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    height: 160px;
+    margin: 0;
+    background-color: black;
+}
