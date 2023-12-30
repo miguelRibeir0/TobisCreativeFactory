@@ -7,7 +7,7 @@ body {
     font-family: 'Hanken Grotesk', sans-serif;
     font-weight: 500;
 }
-ul {
+ul {                            /* nav side-bar */
     position: fixed;
     top: 0;
     right: 0;
@@ -26,6 +26,13 @@ a {
 a:visited {
     color: initial;
 }
+:root {                       /* defining the color pallete */
+    --orange: #E2A041;
+    --red: #E24141;
+    --blue: #4E41E2;
+    --green: #7EE241;
+    --purple: #E241DC;
+}
 
 .navLink {
     font-size: 25px;
@@ -34,16 +41,16 @@ a:visited {
     border-bottom: 4px solid transparent; /* so items dont move on hover */
 }
 .navLink:nth-child(2):hover {
-    border-bottom: 4px solid orange;
+    border-bottom: 4px solid var(--orange);  /* underline on hover */
 }
 .navLink:nth-child(3):hover {
-    border-bottom: 4px solid blue;
+    border-bottom: 4px solid var(--blue);
 }
 .navLink:nth-child(4):hover {
-    border-bottom: 4px solid green;
+    border-bottom: 4px solid var(--green);
 }
 .navLink:nth-child(5):hover {
-    border-bottom: 4px solid purple;
+    border-bottom: 4px solid var(--purple);
 }
 .navLogo {
     margin-bottom: 40px; 
@@ -80,13 +87,14 @@ a:visited {
     margin: 80px 0px;
 }
 
-.block {
-    background-color: red;
+.block {                       /* landing page blocks */
+    overflow: hidden;
+    position: relative;
 }
 .block:not(:last-child) {
     margin-bottom: 80px;
 }
-.large {
+.large {                        /* different sizes/settings blocks */
     width: 1400px;
     height: 500px;
 }
@@ -100,25 +108,138 @@ a:visited {
     background-position: center;
     background-size: cover;
 }
-
 .medium {
     width: 800px;
     height: 800px;
     background-image: url("../images/girlBW.jpeg");
     background-position: top;
     background-size: 100%;
+    cursor: pointer;
 }
 .small {
     width: 500px;
     height: 800px;
-    background-color: chocolate;
     margin-left: 100px;
     background-image: url("../images/calendario.jpg");
     background-position: center;
     background-size: cover;
 }
+.rectangle {                 /* blocks decoration */
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    left: calc(100% - 200px);
+    top: 100px;
+    transition: 0.5s;
+}
+.medium .rectangle {
+    left: 0;
+}
 
+.semicircle {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 200px); /* 440px(height+border*2) / 2 */
+    left: -220px;
+    transition: 0.5s;
+}
+.medium .semicircle {
+    top: calc(100% - 200px);
+    left: calc(100% - 150px);
+}
+.orange {
+    background-color: var(--orange);
+}
+.orangec {
+    border: 50px solid var(--orange);
+}
+.green {
+    background-color: var(--green);
+}
+.greenc {
+    border: 50px solid var(--green);
+}
 
+.large:hover > .rectangle {   /* hover effects */
+    height: 110px;
+    width: 240px;
+    left: calc(100% - 225px);
+    top: 90px;
+}
+.large:hover > .semicircle {
+    top: calc(50% - 210px);
+}
+.large:hover > .orangec {
+    border: 60px solid var(--orange);
+}
+.large:hover > .overlayOrange {
+    opacity: 15%;
+}
+.medium:hover > .overlayGreen {
+    opacity: 15%;
+}
+.medium:hover > .rectangle {
+    height: 110px;
+    width: 240px;
+    top: 90px;
+}
+.medium:hover > .greenc {
+    border: 60px solid var(--green);
+}
+.medium:hover > .semicircle {
+    top: calc(100% - 210px);
+    left: calc(100% - 160px);
+}
+
+.overlayOrange {
+    width: 100%;
+    height: 100%;
+    background-color: var(--orange);
+    opacity: 0%;
+    transition: opacity 1s;
+}
+.overlayGreen {
+    width: 100%;
+    height: 100%;
+    background-color: var(--green);
+    opacity: 0%;
+    transition: opacity 1s;
+}
+#year {
+    position: absolute;
+    font-size: 2rem;
+    top: calc(50% - 1rem);
+    left: 20px;
+    color: white;
+}
+.intro {
+    position: absolute;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+    top: 70%;
+    left: 60%;
+    text-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
+}
+.event {
+    position: absolute;
+    text-transform: uppercase;
+    color: white;
+    font-size: 3.5rem;
+    top: 80%;
+    left: 60%;
+    text-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
+}
+.medium .intro {
+    left: 5%;
+    top: 80%;
+}
+.medium .event {
+    left: 5%;
+    top: 85%;
+}
 
 
 
