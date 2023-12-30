@@ -90,6 +90,7 @@ a:visited {
 .block {                       /* landing page blocks */
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 .block:not(:last-child) {
     margin-bottom: 80px;
@@ -102,11 +103,13 @@ a:visited {
     background-image: url("../images/tobishallway.jpeg");
     background-position: center;
     background-size: cover;
+    cursor: default;
 }
 .large:nth-child(4) {
     background-image: url("../images/ticket.jpg");
     background-position: center;
-    background-size: cover;
+    background-size: 90%;
+
 }
 .medium {
     width: 800px;
@@ -132,10 +135,6 @@ a:visited {
     top: 100px;
     transition: 0.5s;
 }
-.medium .rectangle {
-    left: 0;
-}
-
 .semicircle {
     height: 300px;
     width: 300px;
@@ -145,10 +144,27 @@ a:visited {
     left: -220px;
     transition: 0.5s;
 }
+.medium .rectangle {
+    left: 0;
+}
 .medium .semicircle {
     top: calc(100% - 200px);
     left: calc(100% - 150px);
 }
+.small .semicircle {
+    top: calc(100% - 200px);
+    right: calc(100% - 150px);
+}
+.large:nth-child(4) .rectangle {
+    left: 0;
+    top: 50px;
+}
+.large:nth-child(4) .semicircle {
+    top: calc(100% - 200px);
+    left: calc(100% - 150px);
+}
+
+
 .orange {
     background-color: var(--orange);
 }
@@ -161,7 +177,15 @@ a:visited {
 .greenc {
     border: 50px solid var(--green);
 }
-
+.redc {
+    border: 50px solid var(--red);
+}
+.white {
+    background-color: white;
+}
+.whitec {
+    border: 50px solid white;
+}
 .large:hover > .rectangle {   /* hover effects */
     height: 110px;
     width: 240px;
@@ -192,6 +216,32 @@ a:visited {
     top: calc(100% - 210px);
     left: calc(100% - 160px);
 }
+.small:hover > .redc {
+    border: 60px solid var(--red);
+}
+.smal:hover > .semicircle {
+    top: calc(100% - 210px);
+    right: calc(100% - 160px);
+}
+.small:hover > .overlayRed {
+    opacity: 10%;
+}
+.large:nth-child(4):hover > .whitec {
+    border: 60px solid white;
+}
+.large:nth-child(4):hover > .rectangle {
+    height: 110px;
+    width: 240px;
+    left: 0;
+    top: 45px;
+}
+.large:nth-child(4):hover > .semicircle {
+    top: calc(100% - 210px);
+    left: calc(100% - 160px);
+}
+.large:nth-child(4):hover > .overlayWhite {
+    opacity: 15%;
+}
 
 .overlayOrange {
     width: 100%;
@@ -207,7 +257,25 @@ a:visited {
     opacity: 0%;
     transition: opacity 1s;
 }
-#year {
+.overlayRed {
+    width: 100%;
+    height: 100%;
+    background-color: var(--red);
+    opacity: 0%;
+    transition: opacity 1s;
+}
+.overlayWhite {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0%;
+    transition: opacity 1s;
+}
+
+
+
+
+#year {                             /* info on blocks */
     position: absolute;
     font-size: 2rem;
     top: calc(50% - 1rem);
@@ -221,7 +289,7 @@ a:visited {
     font-size: 2rem;
     top: 70%;
     left: 60%;
-    text-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
 }
 .event {
     position: absolute;
@@ -230,7 +298,7 @@ a:visited {
     font-size: 3.5rem;
     top: 80%;
     left: 60%;
-    text-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
 }
 .medium .intro {
     left: 5%;
@@ -240,7 +308,22 @@ a:visited {
     left: 5%;
     top: 85%;
 }
-
+.small .intro {
+    left: 7%;
+    top: 5%;
+}
+.small .event {
+    left: 7%;
+    top: 10%;
+}
+.large:nth-child(4) .intro {
+    left: 5%;
+    top: 69%;
+}
+.large:nth-child(4) .event {
+    left: 5%;
+    top: 77%;
+}
 
 
 
