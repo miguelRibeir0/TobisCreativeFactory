@@ -61,22 +61,40 @@ a:visited {
     height: auto;
 }
 
+.headerMobile { 
+    display: none;
+}
 
 
+.hamburguer {     /* hamburguer menu */
+    display: block;
+    position: relative;
+    width: 35px;
+    cursor: pointer;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+.hamburguer .bar, .hamburguer::after, .hamburguer::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+.hamburguer.is-active::before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+.hamburguer.is-active::after {
+    transform: rotate(45deg) translate(-9px, -8px);
+}
+.hamburguer.is-active .bar{
+    opacity: 0;
+}
 
 .blockGrid {         /* defines the grid that contains our navigation blocks */
     width: calc(100% - 300px);
@@ -178,6 +196,10 @@ a:visited {
 .greenc {
     border: 50px solid var(--green);
 }
+.red {
+    background-color: var(--red);
+    display: none;
+}
 .redc {
     border: 50px solid var(--red);
 }
@@ -187,6 +209,9 @@ a:visited {
 .whitec {
     border: 50px solid white;
 }
+
+
+
 .large:hover > .rectangle {   /* hover effects */
     height: 110px;
     width: 240px;
@@ -329,13 +354,6 @@ a:visited {
 
 
 
-
-
-
-
-
-
-
 footer {
     height: 220px;
     background-color: black;
@@ -371,4 +389,150 @@ footer a:last-child {
 }
 footer a:visited {
     color: white;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1250px) {
+    nav ul {
+        display: none;
+    }
+    .headerMobile {
+        height: 100px;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        z-index: 2;
+    }
+    .navLogo {
+        margin-bottom: 0px; 
+    }
+    .navLogo img {
+        width: 150px;
+    }
+    .mobileNav {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -40%;
+        width: 40%;
+        min-height: 100vh;
+        z-index: 1;
+        background-color: white;
+        padding-top: 120px;
+        transition: 0.4s;
+    }
+    .mobileNav.is-active {
+        left: 0;
+    }
+    .mobileNav a {
+        display: block;
+        text-align: center;
+        margin: 55px 0px;
+        padding: 12px 16px;
+    }
+}
+
+
+
+@media screen and (max-width: 1550px) {
+    .large {
+        width: 950px !important;
+    }
+    .large .event {
+        left: 40% !important;
+    }.large .intro {
+        left: 40% !important;
+    }
+    .medium {
+        width: 950px !important;
+        height: 500px;
+        background-position: center !important;
+    }
+    .small:hover > .rectangle {
+        height: 110px;
+        width: 240px;
+        left: calc(100% - 225px);
+        top: 90px;
+    }
+    .medium .intro {
+        top: 70%;
+    }
+    .medium .event {
+        top: 80%;
+    }
+    .small {
+        width: 950px !important;
+        height: 500px;
+        margin: 0;
+        background-size: 210% !important;
+        background-position: 100% 30% !important;
+    }
+    .small .intro {
+        top: 70%;
+        left: 60%;
+    }
+    .small .event {
+        top: 80%;
+        left: 60%;
+    }
+    .large:nth-child(4) {
+        background-size: 110%;
+    }
+    .large:nth-child(4) .intro {
+        left: 5% !important;
+        top: 70%;
+    }
+    .large:nth-child(4) .event {
+        left: 5% !important;
+        top: 80%;
+    }
+    .red {
+        display: block;
+    }
+}
+
+
+
+@media screen and (max-width: 1850px) {
+    .large {
+        width: 1200px;
+    }
+    .large .event {
+        left: 55%;
+    }.large .intro {
+        left: 55%;
+    }
+    .medium {
+        width: 700px;
+        background-size: cover;
+    }
+    .small {
+        width: 400px;
+    }
+}
+
+
+@media screen and (min-width: 2200px) {
+    .large {
+        width: 1800px;
+    }
+    .medium {
+        width: 1000px;
+    }
+    .small {
+        width: 700px;
+    }
 }
