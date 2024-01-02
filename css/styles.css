@@ -1,3 +1,10 @@
+:root {                      
+    --orange: #E2A041;
+    --red: #E24141;
+    --blue: #4E41E2;
+    --green: #7EE241;
+    --purple: #E241DC;
+}
 * {
     margin: 0;
     padding: 0;
@@ -24,18 +31,12 @@ a {
     font-weight: 700;
 }
 a:visited {
-    color: initial;
-}
-:root {                       /* defining the color pallete */
-    --orange: #E2A041;
-    --red: #E24141;
-    --blue: #4E41E2;
-    --green: #7EE241;
-    --purple: #E241DC;
+    color:inherit;
 }
 
+
 .navLink {
-    font-size: 25px;
+    font-size: 1.8rem;
     text-transform: uppercase;
     margin-bottom: 40px;
     border-bottom: 4px solid transparent; /* so items dont move on hover */
@@ -336,7 +337,38 @@ a:visited {
 
 
 footer {
-    height: 160px;
-    margin: 0;
+    height: 220px;
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+footer img {
+    width: 150px;
+    height: auto;
+}
+#centeredLogo {
+    width: 300px;
+    width: 20%;
+}
+#centeredLogo img {
+    display: block;
+    margin: 0 auto;
+}
+footer a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    width: 20%;
+    text-align: center;
+}
+footer a:first-child {
+    text-align: end;
+}
+footer a:last-child {
+    text-align: start;
+}
+footer a:visited {
+    color: white;
 }
