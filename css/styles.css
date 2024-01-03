@@ -13,6 +13,7 @@ body {
     min-height: 100vh;
     font-family: 'Hanken Grotesk', sans-serif;
     font-weight: 500;
+    overflow-x: hidden;
 }
 ul {                            /* nav side-bar */
     position: fixed;
@@ -21,9 +22,12 @@ ul {                            /* nav side-bar */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: top;
     width: 300px;
+    height: 100vh;
     padding: 50px 0;
+    z-index: 2;
+    background-color: white;
 }
 a {
     text-decoration: none;
@@ -306,6 +310,7 @@ footer {
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 3;
 }
 footer img {
     width: 150px;
@@ -586,4 +591,54 @@ footer a:visited {
     .rectangle {
         top: 10%;
     }
+}
+
+
+
+
+/* ARTISTS */ 
+
+.pageTitle {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    margin-top: 70px;
+}
+.pageTitle .rectangle {
+    position: static;
+}
+.pageTitle h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 4rem;
+    margin-left: 50px;
+}
+
+.artistsSection {
+    margin-left: 50px;
+    margin-top: 100px;
+}
+.artistsSection h2 {
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 2rem;
+}
+.artistsSection h2:not(:first-child) {
+    margin-top: 100px;
+}
+.photoGallery {
+    display: flex;
+    height: 354px;
+}
+.photoGallery:last-child {
+    margin-bottom: 150px;
+}
+.photoGallery .photoBlock {
+    background-color: var(--orange);
+    height: 100%;
+    width: 354px;
+}
+.photoBlock:not(:last-child) {
+    margin-right: 70px;
 }
