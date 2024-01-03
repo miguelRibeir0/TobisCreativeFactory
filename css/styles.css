@@ -502,7 +502,7 @@ footer a:visited {
         position: fixed;
         top: 0;
         left: -40%;
-        width: 40%;
+        width: 50%;
         min-height: 100vh;
         z-index: 1;
         background-color: white;
@@ -582,5 +582,8 @@ footer a:visited {
     footer img {
         width: 90px;
         height: auto;
+    }
+    .rectangle {
+        top: 10%;
     }
 }
