@@ -13,7 +13,6 @@ body {
     min-height: 100vh;
     font-family: 'Hanken Grotesk', sans-serif;
     font-weight: 500;
-    overflow-x: hidden;
 }
 ul {                            /* nav side-bar */
     position: fixed;
@@ -624,21 +623,26 @@ footer a:visited {
     font-weight: 500;
     font-size: 2rem;
 }
-.artistsSection h2:not(:first-child) {
-    margin-top: 100px;
+.wrapper {
+    margin-bottom: 100px;
 }
-.photoGallery {
-    display: flex;
-    height: 354px;
+
+
+.wrapper {
+    max-width: 1200px;
 }
-.photoGallery:last-child {
-    margin-bottom: 150px;
+.wrapper .photoGallery {
+    white-space: nowrap;
+    font-size: 0px;
+    cursor: grab;
+    overflow: hidden;
+    width: calc(100vw - 50px - 300px);
 }
-.photoGallery .photoBlock {
-    background-color: var(--orange);
-    height: 100%;
-    width: 354px;
+.photoGallery img {
+    height: 340px;
+    width: 340px;
+    object-fit: cover;
 }
-.photoBlock:not(:last-child) {
-    margin-right: 70px;
+.photoGallery img:not(:first-child)  {
+    margin-left: 100px;
 }
