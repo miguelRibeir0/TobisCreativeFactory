@@ -396,6 +396,91 @@ footer a:visited {
 
 
 
+
+/* ARTISTS */ 
+
+.pageTitle {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    margin-top: 70px;
+}
+.pageTitle .rectangle {
+    position: static;
+}
+.pageTitle h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 4rem;
+    margin-left: 50px;
+}
+
+.artistsSection {
+    margin-left: 50px;
+    margin-top: 100px;
+}
+.artistsSection h2 {
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 2rem;
+}
+.wrapper {
+    margin-bottom: 100px;
+}
+.wrapper .photoGallery {
+    display: flex;
+    cursor: grab;
+    overflow: hidden;
+    width: calc(100vw - 50px - 300px);
+}
+.photoGallery img {
+    height: 340px;
+    width: 340px;
+    object-fit: cover;
+    transition: opacity 0.5s;
+    position: relative;
+}
+.photoGallery .blockWrapper:not(:first-child)  {
+    margin-left: 100px;
+}
+.blockWrapper {
+    position: relative;
+}
+.blockOverlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(226, 160, 65, 0);
+    height: calc(100% - 5px);
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.oBlockText {
+    position: absolute;
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: opacity 0.5s;
+    z-index: 3;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 2200px) {
     .large {
         width: 1800px;
@@ -477,9 +562,28 @@ footer a:visited {
     .red {
         display: block;
     }
+
+    /* ARTISTS */
+
+    .pageTitle .rectangle {
+        width: 150px;
+    }
+    .pageTitle h1 {
+        font-size: 3rem;
+    }
+    .artistsSection h2 {
+        font-size: 1.7rem;
+    }    
+    .photoGallery img {
+        height: 240px;
+        width: 240px;
+    }
+    .oBlockText {
+        font-size: 1.5rem;
+    }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1150px) {
     nav ul {
         display: none;
     }
@@ -559,6 +663,15 @@ footer a:visited {
     .small {
         background-position: 10% 30%;
     }
+
+    /* Artists */ 
+
+    .pageTitle {
+        margin-top: 150px;
+    }
+    .wrapper .photoGallery {
+        width: calc(100vw - 100px);
+    }
 }
 @media screen and (max-width: 750px) {
     .large:nth-child(4) {
@@ -590,59 +703,27 @@ footer a:visited {
     .rectangle {
         top: 10%;
     }
-}
 
+     /* Artists */ 
 
-
-
-/* ARTISTS */ 
-
-.pageTitle {
-    display: flex;
-    height: 100px;
-    align-items: center;
-    margin-top: 70px;
-}
-.pageTitle .rectangle {
-    position: static;
-}
-.pageTitle h1 {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 4rem;
-    margin-left: 50px;
-}
-
-.artistsSection {
-    margin-left: 50px;
-    margin-top: 100px;
-}
-.artistsSection h2 {
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 2rem;
-}
-.wrapper {
-    margin-bottom: 100px;
-}
-
-
-.wrapper {
-    max-width: 1200px;
-}
-.wrapper .photoGallery {
-    white-space: nowrap;
-    font-size: 0px;
-    cursor: grab;
-    overflow: hidden;
-    width: calc(100vw - 50px - 300px);
-}
-.photoGallery img {
-    height: 340px;
-    width: 340px;
-    object-fit: cover;
-}
-.photoGallery img:not(:first-child)  {
-    margin-left: 100px;
+     .pageTitle .rectangle {
+        width: 50px;
+    }
+    .pageTitle h1 {
+        font-size: 1.9rem;
+        margin-left: 30px;
+    }
+    .artistsSection {
+        margin-top: 70px;
+    }
+    .wrapper {
+        margin-bottom: 70px;
+    }
+    .photoGallery img {
+        height: 170px;
+        width: 170px;
+    }
+    .photoGallery .blockWrapper:not(:first-child)  {
+        margin-left: 50px;
+    }
 }
