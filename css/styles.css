@@ -217,6 +217,9 @@ a:visited {
 .whitec {
     border: 50px solid white;
 }
+.blue {
+    background-color: var(--blue);
+}
 
 
 
@@ -472,9 +475,72 @@ footer a:visited {
 }
 
 
+/* Tickets */
 
 
-
+.ticketWrapper {
+    width: 1400px;
+    margin: 150px 0px 150px 100px;
+    display: flex;
+}
+.productTicket {
+    width: 450px;
+    height: 450px;
+    background-color: var(--blue);
+}
+.ticketInformation {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.ticketInformation h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.ticketInformation img {
+    display: block;
+    background-size: cover;
+}
+.ticketInformation h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    color: var(--blue);
+}
+.ticketInfo {
+    font-size: 1.2rem;
+    width: 800px;
+}
+.pricingTicket {
+    display: flex;
+    align-items: center;
+}
+.pricingTicket p {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.pricingTicket div {
+    width: 4px;
+    height: 100%;
+    background-color: #000;
+    margin: 0 30px;
+}
+.pricingTicket button {
+    appearance: none;
+    border: none;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    text-align: center;
+    background-color: var(--blue);
+    color: white;
+    cursor: pointer;
+}
+.pricingTicket button:hover {
+    background-color: #7166e7;
+}
 
 
 
@@ -725,5 +791,8 @@ footer a:visited {
     }
     .photoGallery .blockWrapper:not(:first-child)  {
         margin-left: 50px;
+    }
+    .artistsSection h2 {
+        font-size: 1.3rem;
     }
 }

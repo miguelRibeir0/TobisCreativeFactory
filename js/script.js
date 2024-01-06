@@ -3,7 +3,7 @@ const mobileMenu = document.querySelector(".mobileNav");
 const carousel = document.querySelectorAll(".photoGallery");
 const photoOver = document.querySelectorAll(".blockOverlay");
 const photoText = document.querySelectorAll(".oBlockText");
-let photographers = ["Pedro Álvaro", "Duarte Marques", "Ana Martins" , "Josez", "Carla Vento", "Miguel Afonso", "Rodrigo Bruno", "Jzrt", "Bruno Maymone", "dzrt", "Carlos afonso", "Beatriz Beto", "catarina silva"];
+let artists = ["Pedro Álvaro", "Duarte Marques", "Ana Martins" , "Josez", "Carla Vento", "Miguel Afonso", "Rodrigo Bruno", "Jzrt", "Bruno Maymone", "dzrt", "Carlos afonso", "Beatriz Beto", "catarina silva"];
 let colorsOverlay = ["rgba(226, 160, 65, 0.5)", "rgba(126, 226, 65, 0.5)","rgba(226, 65, 220, 0.5)"];
 
 let isDragStart = false, prevPageX, prevScrollLeft;
@@ -55,7 +55,7 @@ for (let i = 0; i < photoOver.length; i++ ) {  //overlay color for the blocks on
         } else {
             photoOver[i].style.backgroundColor = colorsOverlay[2];
         };
-        photoText[i].innerText = photographers[i];
+        photoText[i].innerText = artists[i];
     })
     photoOver[i].addEventListener("mouseleave", () => {
         photoOver[i].style.opacity = "0%";
