@@ -479,7 +479,6 @@ footer a:visited {
 
 
 .ticketWrapper {
-    width: 1400px;
     margin: 150px 0px 150px 100px;
     display: flex;
 }
@@ -499,10 +498,6 @@ footer a:visited {
     font-weight: 700;
     text-transform: uppercase;
 }
-.ticketInformation img {
-    display: block;
-    background-size: cover;
-}
 .ticketInformation h3 {
     font-size: 1.5rem;
     margin-top: 20px;
@@ -512,7 +507,7 @@ footer a:visited {
 }
 .ticketInfo {
     font-size: 1.2rem;
-    width: 800px;
+    width: calc(100% - 300px - 50px);
 }
 .pricingTicket {
     display: flex;
@@ -557,6 +552,10 @@ footer a:visited {
     .small {
         width: 700px;
     }
+    .ticketInfo {
+        font-size: 1.4rem;
+        width: 750px;
+    }
 }
 
 
@@ -576,6 +575,9 @@ footer a:visited {
     .small {
         width: 400px;
     }
+
+    /* Tickets */
+
 }
 
 
@@ -646,6 +648,28 @@ footer a:visited {
     }
     .oBlockText {
         font-size: 1.5rem;
+    }
+
+    /* TICKETS */
+
+    .productTicket {
+        width: 400px;
+        height: 400px;
+    }
+    .ticketInformation h1 {
+        font-size: 2.7rem;
+    }
+    .ticketInformation h3 {
+        font-size: 1.2rem;
+    }
+    .pricingTicket p {
+        font-size: 1.7rem;
+    }
+    .pricingTicket div {
+        width: 3px;
+    }
+    .pricingTicket button {
+        padding: 20px 40px;
     }
 }
 
