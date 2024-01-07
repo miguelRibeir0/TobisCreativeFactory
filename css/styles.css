@@ -343,6 +343,11 @@ footer a:visited {
 }
 
 
+
+
+
+
+
 /* ARTISTS */ 
 
 .pageTitle {
@@ -398,7 +403,6 @@ footer a:visited {
     align-items: center;
     justify-content: center;
     position: absolute;
-    background-color: rgba(226, 160, 65, 0);
     height: calc(100% - 5px);
     width: 100%;
     top: 0;
@@ -412,9 +416,9 @@ footer a:visited {
     font-size: 2.2rem;
     font-weight: 700;
     text-transform: uppercase;
-    transition: opacity 0.5s;
     z-index: 3;
     text-align: center;
+    transition: opacity 0.5s;
 }
 
 
@@ -488,17 +492,71 @@ footer a:visited {
 .shopWrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: 150px 100px 100px;
+    margin: 150px 150px 100px;
     width: calc(100% - 300px - 200px);
 }
 .shopItem {
     display: block;
     width: 350px;
     height: 350px;
-    margin: 0px 50px 100px;
     background-color: #7EE241;
     object-fit: cover;
+    position: relative;
 }
+.blockOverlay2 {
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    position: absolute;
+    height: calc(100%);
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    cursor: pointer;
+}
+.shopWrapper .blockWrapper {
+    margin-bottom: 100px;
+}
+.shopWrapper .blockWrapper:not(:first-child,:nth-child(4),:nth-child(7))  {
+    margin-left: 100px;
+}
+.itemPricing {
+    position: absolute;
+    color: white;
+    background-color: #000;
+    margin-bottom: 25px;
+    padding: 20px;
+    text-transform: uppercase;
+    z-index: 3;
+    text-align: left;
+    transition: opacity 0.5s;
+}
+.itemPricing h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.itemPricing p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (hover: hover) {
@@ -592,9 +650,6 @@ footer a:visited {
     .small {
         width: 400px;
     }
-
-    /* Tickets */
-
 }
 
 
