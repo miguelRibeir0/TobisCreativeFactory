@@ -342,63 +342,6 @@ footer a:visited {
     color: white;
 }
 
-@media (hover: hover) {
-    .large:hover > .rectangle {   /* hover effects */
-        height: 110px;
-        width: 240px;
-        left: calc(100% - 225px);
-        top: 90px;
-    }
-    .large:hover > .semicircle {
-        top: calc(50% - 210px);
-    }
-    .large:hover > .orangec {
-        border: 60px solid var(--orange);
-    }
-    .large:hover > .overlayOrange {
-        opacity: 15%;
-    }
-    .medium:hover > .overlayGreen {
-        opacity: 15%;
-    }
-    .medium:hover > .rectangle {
-        height: 110px;
-        width: 240px;
-        top: 90px;
-    }
-    .medium:hover > .greenc {
-        border: 60px solid var(--green);
-    }
-    .medium:hover > .semicircle {
-        top: calc(100% - 210px);
-        left: calc(100% - 160px);
-    }
-    .small:hover > .redc {
-        border: 60px solid var(--red);
-    }
-    .small:hover > .overlayRed {
-        opacity: 10%;
-    }
-    .large:nth-child(4):hover > .whitec {
-        border: 60px solid white;
-    }
-    .large:nth-child(4):hover > .rectangle {
-        height: 110px;
-        width: 240px;
-        left: 0;
-        top: 45px;
-    }
-    .large:nth-child(4):hover > .semicircle {
-        top: calc(100% - 210px);
-        left: calc(100% - 160px);
-    }
-    .large:nth-child(4):hover > .overlayWhite {
-        opacity: 15%;
-    }
-}
-
-
-
 
 /* ARTISTS */ 
 
@@ -482,6 +425,9 @@ footer a:visited {
     margin: 150px 0px 150px 100px;
     display: flex;
 }
+.ticketWrapper img {
+    object-fit: cover;
+}
 .productTicket {
     width: 450px;
     height: 450px;
@@ -537,7 +483,78 @@ footer a:visited {
     background-color: #7166e7;
 }
 
+/* SHOP */
 
+.shopWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 150px 100px 100px;
+    width: calc(100% - 300px - 200px);
+}
+.shopItem {
+    display: block;
+    width: 350px;
+    height: 350px;
+    margin: 0px 50px 100px;
+    background-color: #7EE241;
+    object-fit: cover;
+}
+
+
+@media (hover: hover) {
+    .large:hover > .rectangle {   /* hover effects */
+        height: 110px;
+        width: 240px;
+        left: calc(100% - 225px);
+        top: 90px;
+    }
+    .large:hover > .semicircle {
+        top: calc(50% - 210px);
+    }
+    .large:hover > .orangec {
+        border: 60px solid var(--orange);
+    }
+    .large:hover > .overlayOrange {
+        opacity: 15%;
+    }
+    .medium:hover > .overlayGreen {
+        opacity: 15%;
+    }
+    .medium:hover > .rectangle {
+        height: 110px;
+        width: 240px;
+        top: 90px;
+    }
+    .medium:hover > .greenc {
+        border: 60px solid var(--green);
+    }
+    .medium:hover > .semicircle {
+        top: calc(100% - 210px);
+        left: calc(100% - 160px);
+    }
+    .small:hover > .redc {
+        border: 60px solid var(--red);
+    }
+    .small:hover > .overlayRed {
+        opacity: 10%;
+    }
+    .large:nth-child(4):hover > .whitec {
+        border: 60px solid white;
+    }
+    .large:nth-child(4):hover > .rectangle {
+        height: 110px;
+        width: 240px;
+        left: 0;
+        top: 45px;
+    }
+    .large:nth-child(4):hover > .semicircle {
+        top: calc(100% - 210px);
+        left: calc(100% - 160px);
+    }
+    .large:nth-child(4):hover > .overlayWhite {
+        opacity: 15%;
+    }
+}
 
 
 
@@ -657,7 +674,7 @@ footer a:visited {
         height: 400px;
     }
     .ticketInformation h1 {
-        font-size: 2.7rem;
+        font-size: 2.3rem;
     }
     .ticketInformation h3 {
         font-size: 1.2rem;
@@ -762,6 +779,30 @@ footer a:visited {
     .wrapper .photoGallery {
         width: calc(100vw - 100px);
     }
+    /* Tickets */
+
+    .ticketWrapper {
+        margin: 100px 100px 0px;
+        display: block;
+    }
+    .ticketWrapper:last-child {
+        margin-bottom: 100px;
+    }
+    .productTicket {
+        width: 100%;
+        height: 400px;
+    }
+    .ticketInformation {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    .ticketInformation .ticketInfo {
+        width: 100%;
+        margin-bottom: 70px;
+    }
+    .pricingTicket div {
+        height: 55px;
+    }
 }
 @media screen and (max-width: 750px) {
     .large:nth-child(4) {
@@ -818,5 +859,40 @@ footer a:visited {
     }
     .artistsSection h2 {
         font-size: 1.3rem;
+    }
+
+    /* Tickets */ 
+
+    .ticketWrapper {
+        margin: 50px 50px 0px;
+    }
+    .productTicket {
+        height: 200px;
+    }
+    .ticketInformation h1 {
+        font-size: 1.5rem;
+    }
+    .ticketInformation h3 {
+        font-size: 1rem;
+    }
+    .ticketInfo {
+        font-size: 1.1rem;
+        text-justify: auto;
+    }
+    .ticketInformation .ticketInfo {
+        margin-bottom: 50px;
+    }
+    .pricingTicket p {
+        font-size: 1.5rem;
+    }
+    .pricingTicket:last-child p:first-child {
+        font-size: 1.3rem;
+    }
+    .pricingTicket div {
+        height: 40px;
+    }
+    .pricingTicket button {
+        font-size: 0.8rem;
+        padding: 15px 30px;
     }
 }
