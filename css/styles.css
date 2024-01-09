@@ -1130,4 +1130,7 @@ footer a:visited {
     .card .pricingTicket button {
         font-size: 0.8rem;
     }
+    .card img {
+        height: 80%;
+    }
 }
