@@ -596,7 +596,6 @@ footer a:visited {
 
 
 
-
 @media (hover: hover) {
     .large:hover > .rectangle {   /* hover effects */
         height: 110px;
@@ -975,7 +974,7 @@ footer a:visited {
     }
     .card .ticketInformation .ticketInfo {
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 10dvh;
         overflow-y: scroll;
         height: 150px;
     }
