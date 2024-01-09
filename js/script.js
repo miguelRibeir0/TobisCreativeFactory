@@ -36,6 +36,7 @@ let shopText = [
     "Introducing our Ceramic Mug, a perfect blend of timeless style and functional elegance. Crafted with precision from high-quality ceramic, this mug offers a delightful way to savor your favorite beverages. The smooth, glazed surface not only adds a touch of sophistication but also makes for easy cleaning. Its sturdy handle provides a comfortable grip, ensuring a pleasurable .."
 ];
 let shopH3 = ["recycled paper 300gm","BIO-DEGRADABLE 5X5CM STICKERS", "RECYCLED PAPER BAG 300/GM", "100% recycled polyester","250gsm organic cotton","250gsm organic cotton","recycled paper 400gm","ceramic mug"];
+let windowWidth = window.matchMedia("(min-width: 1151px)");
 
 
 
@@ -97,32 +98,32 @@ for (let i = 0; i < photoOver.length; i++ ) {  //overlay color for the blocks on
 }
 
 for (let i = 0; i < shopOver.length; i++) { //overlay color for the blocks on the shop page
-    shopOver[i].addEventListener("mouseover", () => {
-        shopOver[i].style.opacity = "100%";
-        switch (i) {
-            case 0:
-                shopOver[i].style.backgroundColor = colorsOverlay[2];
-                break
-            case 4:
-                shopOver[i].style.backgroundColor = colorsOverlay[4];
-                break
-            case 7:
-                shopOver[i].style.backgroundColor = colorsOverlay[1];
-                break
-            case 1:
-            case 6:
-                shopOver[i].style.backgroundColor = colorsOverlay[3];
-                break
-            default:
-                shopOver[i].style.backgroundColor = colorsOverlay[0];
-        }
-        
-    });
+    if (windowWidth.matches) { // media querry
+        shopOver[i].addEventListener("mouseover", () => {
+            shopOver[i].style.opacity = "100%";
+            switch (i) {
+                case 0:
+                    shopOver[i].style.backgroundColor = colorsOverlay[2];
+                    break
+                case 4:
+                    shopOver[i].style.backgroundColor = colorsOverlay[4];
+                    break
+                case 7:
+                    shopOver[i].style.backgroundColor = colorsOverlay[1];
+                    break
+                case 1:
+                case 6:
+                    shopOver[i].style.backgroundColor = colorsOverlay[3];
+                    break
+                default:
+                    shopOver[i].style.backgroundColor = colorsOverlay[0];
+            }
+        });
     shopOver[i].addEventListener("mouseleave", () => {
         shopOver[i].style.opacity = "0%";
     })
+    }
 }
-console.log(itemPriceP[3]);
 
 for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click a shop item
     shopOver[i].addEventListener("click", () => {

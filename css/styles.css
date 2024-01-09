@@ -553,7 +553,7 @@ footer a:visited {
     display: none;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100dvh;
     width: 99vw;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 99;
@@ -932,16 +932,16 @@ footer a:visited {
     /* Shop */ 
 
     .shopWrapper {
-        margin: 100px 50px 50px;
-        width: calc(100% - 100px);
+        margin: 100px 35px 50px;
+        width: calc(100% - 70px);
     }
     .shopWrapper .blockWrapper  {
-        margin-left: 21px;
-        margin-right: 21px;
+        margin-left: 15px;
+        margin-right: 15px;
     }
     .shopItem {
-        width: 170px;
-        height: 170px;
+        width: 300px;
+        height: 300px;
     }
     .itemPricing h4 {
         font-size: 1.2rem;
@@ -963,21 +963,21 @@ footer a:visited {
     }
     .card {
         width: 80vw;
-        height: 90vh;
+        height: 90dvh;
         flex-direction: column;
     }
     .card .ticketInformation {
-        margin: 40px 50px;
+        margin: 35px 40px;
     }
     .card .ticketInformation h3 {
         margin-top: 10px;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
     .card .ticketInformation .ticketInfo {
         width: 100%;
-        margin-bottom: 80px;
+        margin-bottom: 30px;
         overflow-y: scroll;
-        height: 120px;
+        height: 150px;
     }
     .card img {
         display: block;
@@ -988,6 +988,7 @@ footer a:visited {
     }
     .blockOverlay2, .itemPricing {
         opacity: 100%;
+        z-index: 1;
     }
     
 }
@@ -1086,8 +1087,9 @@ footer a:visited {
     /* Shop */ 
 
     .shopWrapper {
-        margin: 50px 27px 50px;
-        width: calc(100% - 54px);
+        margin: 50px 13px 50px;
+        width: calc(100% - 26px);
+        justify-content: center;
     }
     .shopWrapper .blockWrapper  {
         margin-left: 15px;
@@ -1095,10 +1097,6 @@ footer a:visited {
     }
     .shopWrapper .blockWrapper {
         margin-bottom: 50px;
-    }
-    .shopItem {
-        width: 130px;
-        height: 130px;
     }
     .itemPricing h4 {
         font-size: 10rem;
@@ -1108,21 +1106,22 @@ footer a:visited {
         margin-top: 5px;
     }
     .itemPricing {
-        margin-bottom: 5px;
-        padding: 10px;
+        margin-bottom: 10px;
+        padding: 15px;
+        min-width: 100px;
     }
     .itemPricing h4 {
-        font-size: 0.8rem;
+        font-size: 1.2rem;
     }
     .itemPricing p {
-        font-size: 0.7rem;
+        font-size: 1.1rem;
         margin-top: 5px;
     }
     .card .ticketInformation .ticketInfo {
         width: 100%;
         margin-bottom: 60px;
         overflow-y: scroll;
-        height: 170px;
+        height: 130px;
     }
     .card .pricingTicket div {
         margin: 0px 25px;
