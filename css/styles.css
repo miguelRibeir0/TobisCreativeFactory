@@ -495,8 +495,8 @@ footer a:visited {
 .shopWrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: 150px 150px 100px;
-    width: calc(100% - 300px - 200px);
+    margin: 150px 0px 100px 100px;
+    width: calc(100% - 300px - 100px);
 }
 .shopItem {
     display: block;
@@ -522,8 +522,9 @@ footer a:visited {
 .shopWrapper .blockWrapper {
     margin-bottom: 100px;
 }
-.shopWrapper .blockWrapper:not(:first-child,:nth-child(4),:nth-child(7))  {
-    margin-left: 100px;
+.shopWrapper .blockWrapper  {
+    margin-left: 50px;
+    margin-right: 50px;
 }
 .itemPricing {
     position: absolute;
@@ -687,6 +688,13 @@ footer a:visited {
     .small {
         width: 400px;
     }
+
+    /* SHOP */ 
+
+    .shopItem {
+        width: 260px;
+        height: 260px;
+    }
 }
 
 
@@ -779,6 +787,31 @@ footer a:visited {
     }
     .pricingTicket button {
         padding: 20px 40px;
+    }
+
+    /* SHOP */
+
+    .shopItem {
+        width: 200px;
+        height: 200px;
+    }
+    .shopWrapper .blockWrapper  {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .shopWrapper .blockWrapper {
+        margin-bottom: 70px;
+    }
+    .itemPricing {
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+    .itemPricing h4 {
+        font-size: 1.2rem;
+    }
+    .itemPricing p {
+        font-size: 0.9rem;
+        margin-top: 5px;
     }
 }
 
@@ -895,6 +928,68 @@ footer a:visited {
     .pricingTicket div {
         height: 55px;
     }
+
+    /* Shop */ 
+
+    .shopWrapper {
+        margin: 100px 50px 50px;
+        width: calc(100% - 100px);
+    }
+    .shopWrapper .blockWrapper  {
+        margin-left: 21px;
+        margin-right: 21px;
+    }
+    .shopItem {
+        width: 170px;
+        height: 170px;
+    }
+    .itemPricing h4 {
+        font-size: 1.2rem;
+    }
+    .itemPricing p {
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+    .itemPricing {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+    .itemPricing h4 {
+        font-size: 1rem;
+    }
+    .itemPricing p {
+        font-size: 0.7rem;
+        margin-top: 5px;
+    }
+    .card {
+        width: 80vw;
+        height: 90vh;
+        flex-direction: column;
+    }
+    .card .ticketInformation {
+        margin: 40px 50px;
+    }
+    .card .ticketInformation h3 {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    .card .ticketInformation .ticketInfo {
+        width: 100%;
+        margin-bottom: 80px;
+        overflow-y: scroll;
+        height: 120px;
+    }
+    .card img {
+        display: block;
+        width: 100%;
+        height: 50%;
+        left: 0;
+        object-fit: cover;
+    }
+    .blockOverlay2, .itemPricing {
+        opacity: 100%;
+    }
+    
 }
 @media screen and (max-width: 750px) {
     .large:nth-child(4) {
@@ -986,5 +1081,54 @@ footer a:visited {
     .pricingTicket button {
         font-size: 0.8rem;
         padding: 15px 30px;
+    }
+
+    /* Shop */ 
+
+    .shopWrapper {
+        margin: 50px 27px 50px;
+        width: calc(100% - 54px);
+    }
+    .shopWrapper .blockWrapper  {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .shopWrapper .blockWrapper {
+        margin-bottom: 50px;
+    }
+    .shopItem {
+        width: 130px;
+        height: 130px;
+    }
+    .itemPricing h4 {
+        font-size: 10rem;
+    }
+    .itemPricing p {
+        font-size: 0.7rem;
+        margin-top: 5px;
+    }
+    .itemPricing {
+        margin-bottom: 5px;
+        padding: 10px;
+    }
+    .itemPricing h4 {
+        font-size: 0.8rem;
+    }
+    .itemPricing p {
+        font-size: 0.7rem;
+        margin-top: 5px;
+    }
+    .card .ticketInformation .ticketInfo {
+        width: 100%;
+        margin-bottom: 60px;
+        overflow-y: scroll;
+        height: 170px;
+    }
+    .card .pricingTicket div {
+        margin: 0px 25px;
+        width: 2px;
+    }
+    .card .pricingTicket button {
+        font-size: 0.8rem;
     }
 }
