@@ -828,7 +828,7 @@ footer a:visited {
         align-items: center;
         justify-content: space-around;
         position: fixed;
-        z-index: 2;
+        z-index: 99;
     }
     .navLogo {
         margin-bottom: 0px; 
@@ -843,7 +843,7 @@ footer a:visited {
         left: -50%;
         width: 50%;
         min-height: 100vh;
-        z-index: 1;
+        z-index: 5;
         background-color: white;
         padding-top: 120px;
         transition: 0.4s;
@@ -1118,9 +1118,9 @@ footer a:visited {
     }
     .card .ticketInformation .ticketInfo {
         width: 100%;
-        margin-bottom: 60px;
+        margin-bottom: 20%;
         overflow-y: scroll;
-        height: 130px;
+        height: 100px;
     }
     .card .pricingTicket div {
         margin: 0px 25px;
