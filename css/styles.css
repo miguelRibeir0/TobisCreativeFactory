@@ -51,10 +51,10 @@ a:visited {
     border-bottom: 4px solid var(--blue);
 }
 .navLink:nth-child(4):hover {
-    border-bottom: 4px solid var(--green);
+    border-bottom: 4px solid var(--purple);
 }
 .navLink:nth-child(5):hover {
-    border-bottom: 4px solid var(--purple);
+    border-bottom: 4px solid var(--green);
 }
 .navLogo {
     margin-bottom: 40px; 
@@ -128,7 +128,6 @@ a:visited {
     background-image: url("../images/tobishallway.jpeg");
     background-position: center;
     background-size: cover;
-    cursor: default;
 }
 .large:nth-child(4) {
     background-image: url("../images/ticket.jpg");
@@ -219,6 +218,9 @@ a:visited {
 }
 .blue {
     background-color: var(--blue);
+}
+.purple {
+    background-color: var(--purple);
 }
 
 
@@ -590,12 +592,6 @@ footer a:visited {
 
 
 
-
-
-
-
-
-
 @media (hover: hover) {
     .large:hover > .rectangle {   /* hover effects */
         height: 110px;
@@ -841,7 +837,7 @@ footer a:visited {
         position: fixed;
         top: 0;
         left: -50%;
-        width: 50%;
+        width: 30%;
         min-height: 100vh;
         z-index: 5;
         background-color: white;
@@ -1020,6 +1016,9 @@ footer a:visited {
     }
     .rectangle {
         top: 10%;
+    }
+    .mobileNav {
+        width: 50%;
     }
 
      /* Artists */ 

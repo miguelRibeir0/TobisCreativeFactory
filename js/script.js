@@ -163,5 +163,3 @@ for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click 
         }
     })
 }
-
-
