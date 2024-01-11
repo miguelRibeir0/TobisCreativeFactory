@@ -371,6 +371,7 @@ footer a:visited {
 .artistsSection {
     margin-left: 50px;
     margin-top: 100px;
+    position: relative;
 }
 .artistsSection h2 {
     margin-bottom: 50px;
@@ -386,6 +387,7 @@ footer a:visited {
     cursor: grab;
     overflow: hidden;
     width: calc(100vw - 50px - 300px);
+    position: relative;
 }
 .photoGallery img {
     height: 340px;
@@ -393,6 +395,12 @@ footer a:visited {
     object-fit: cover;
     transition: opacity 0.5s;
     position: relative;
+}
+.artistsSection i {
+    position:absolute ;
+    color: var(--orange);
+    top: 0;
+    left: calc(100% - 300px - 50px);
 }
 .photoGallery .blockWrapper:not(:first-child)  {
     margin-left: 100px;
@@ -459,7 +467,8 @@ footer a:visited {
 }
 .ticketInfo {
     font-size: 1.2rem;
-    width: calc(100% - 300px - 50px);
+    width: calc(100% - 300px);
+    text-align: justify;
 }
 .pricingTicket {
     display: flex;
@@ -584,6 +593,60 @@ footer a:visited {
     object-fit: cover;
 }
 
+/* ABOUT US */
+
+.photos {
+    display: flex;
+    justify-content: space-between;
+    width: 60vw;
+    flex-wrap: wrap;
+    margin: 100px 0 50px 100px;
+}
+.photos img {
+    object-fit: cover;
+}
+.photos img:first-child {
+    width: 60vw;
+    height: 600px;
+    margin-bottom: 20px;
+}
+.photos img:nth-child(2), .photos img:last-child {
+    width: calc(60vw/2 - 10px);
+}
+.aboutText {
+    margin-left: 100px;
+    margin-bottom: 100px;
+}
+.aboutText h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-size: 700;
+    margin-bottom: 30px;
+}
+.aboutText p {
+    font-size: 1.3rem;
+    width: 60vw;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.aboutText p:nth-child(4) {
+    margin-bottom: 50px;
+}
+.socials {
+    margin-top: 70px;
+}
+.socials i {
+    cursor: pointer;
+    color: var(--purple);
+}
+.socials i:hover {
+    color: rgba(226, 65, 220, 0.7);
+}
+.socials i:not(:first-child) {
+    margin-left: 20px;
+}
+
 
 
 
@@ -646,6 +709,7 @@ footer a:visited {
         opacity: 15%;
     }
 }
+
 
 
 
@@ -899,6 +963,12 @@ footer a:visited {
     .wrapper .photoGallery {
         width: calc(100vw - 100px);
     }
+    .artistsSection i {
+        position:absolute ;
+        color: var(--orange);
+        top: 0;
+        left: calc(100% - 50px);
+    }
     /* Tickets */
 
     .ticketWrapper {
@@ -985,6 +1055,31 @@ footer a:visited {
         opacity: 100%;
         z-index: 1;
     }
+
+    /* About Us */
+
+    .photos {
+        width: 80vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+    .photos img:first-child {
+        width: 80vw;
+        height: 400px;
+    }
+    .photos img:nth-child(2), .photos img:last-child {
+        width: calc(80vw/2 - 10px);
+    }
+    .aboutText {
+        margin-left: 10vw;
+    }
+    .aboutText p {
+        width: 80vw;
+        font-size: 1.1rem;
+    }
+    .aboutText h2 {
+        font-size: 1.8rem;
+    }
     
 }
 @media screen and (max-width: 750px) {
@@ -1045,6 +1140,9 @@ footer a:visited {
     }
     .artistsSection h2 {
         font-size: 1.3rem;
+    }
+    .artistsSection i {
+        font-size: 1.5rem;
     }
 
     /* Tickets */ 
@@ -1130,5 +1228,34 @@ footer a:visited {
     }
     .card img {
         height: 35%;
+    }
+
+    /* About Us */
+
+    .photos {
+        margin-top: 50px;
+    }
+    .photos img:first-child {
+        height: 300px;
+    }
+    .socials {
+        width: 80vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .socials i {
+        font-size: 2rem;
+    }
+    .aboutText p {
+        font-size: 1rem;
+    }
+    .aboutText h2 {
+        font-size: 1.5rem;
+        width: 80vw;
+        text-align: center;
+    }
+    .socials i:not(:first-child) {
+        margin-left: 35px;
     }
 }
