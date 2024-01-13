@@ -205,7 +205,6 @@ a:visited {
 }
 .red {
     background-color: var(--red);
-    display: none;
 }
 .redc {
     border: 50px solid var(--red);
@@ -646,6 +645,94 @@ footer a:visited {
 .socials i:not(:first-child) {
     margin-left: 20px;
 }
+
+
+/* CHECKOUT */
+
+.checkoutWrapper {
+    width: calc(100% - 300px - 100px);
+    margin: 150px 0px 100px 100px;
+}
+.itemContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 120px;
+}
+.itemContainer img {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+}
+.checkoutInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 100px;
+}
+.checkoutInfo h2, h3, p {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.checkoutInfo h2 {
+    font-size: 2.2rem;
+}
+.checkoutInfo h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: var(--red);
+}
+.checkoutInfo p {
+    font-size: 1.7rem;
+}
+.checkoutInfo span:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40vw;
+}
+.checkoutInfo span:last-child span {
+    display: flex;
+}
+.checkoutInfo span:last-child span p:nth-child(2) {
+    margin-left: 25px;
+}
+.checkoutInfo span:last-child span p:nth-child(3) {
+    text-decoration: underline;
+    margin: 0 15px;
+}
+.chekoutPricing {
+    width: calc(100% - 300px - 100px);
+}
+.checkoutPricing div {
+    height: 5px;
+    width: 100%;
+    background-color: #000;
+    opacity: 20%;
+}
+.checkoutPricing span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 50px;
+}
+.checkoutPricing span p {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: 50px;
+}
+.checkoutPricing button {
+    appearance: none;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 15px 25px;
+    background-color: var(--red);
+}
+
+
+
 
 
 
