@@ -163,3 +163,52 @@ for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click 
         }
     })
 }
+
+
+
+const checkoutWrapper = document.querySelector(".checkoutWrapper");
+
+function create(tag, text, className) {   // function that allows us to create tags and add an inner text and class name if needed
+    const elem = document.createElement(tag);
+    if (text) elem.innerText = text;
+    if (className) elem.classList.add(className);
+    return elem;
+}
+
+function checkoutMechanic() {
+    let itemContainer = create("div", null, "itemContainer");
+    let checkoutImage = create("img");
+    checkoutImage.src = imageSrcs[0];
+    let checkoutInfo = create("div", null, "checkoutInfo");
+    let span1 = create("span");
+    let checkoutName = create("h2", "testtest");
+    let checkoutSize = create("h3", "testststsaaaa");
+    let span2 = create("span");
+    let span2_1 = create("span");
+    let amount = create("p", "Amount:");
+    let minus = create("p", "\u2212"); //unicode in js for -
+    let count = create("p", "1");
+    let plus = create("p", "\u002B"); //unicode in js for +
+    let value = create("p", "29,99€");
+
+
+    checkoutWrapper.appendChild(itemContainer);
+        itemContainer.appendChild(checkoutImage);
+        itemContainer.appendChild(checkoutInfo);
+            checkoutInfo.appendChild(span1);
+                span1.appendChild(checkoutName);
+                span1.appendChild(checkoutSize);
+            checkoutInfo.appendChild(span2);
+                span2.appendChild(span2_1);
+                    span2_1.appendChild(amount);
+                    span2_1.appendChild(minus);
+                    span2_1.appendChild(count);
+                    span2_1.appendChild(plus);
+                span2.appendChild(value);
+};
+
+const buyingBtn = document.getElementById("test");
+
+buyingBtn.addEventListener("click", () => {
+    checkoutMechanic();
+})

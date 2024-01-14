@@ -700,8 +700,9 @@ footer a:visited {
     text-decoration: underline;
     margin: 0 15px;
 }
-.chekoutPricing {
+.checkoutPricing {
     width: calc(100% - 300px - 100px);
+    margin-bottom: 100px;
 }
 .checkoutPricing div {
     height: 5px;
@@ -729,6 +730,7 @@ footer a:visited {
     font-size: 1rem;
     padding: 15px 25px;
     background-color: var(--red);
+    cursor: pointer;
 }
 
 
