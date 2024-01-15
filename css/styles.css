@@ -821,6 +821,9 @@ footer a:visited {
         font-size: 1.4rem;
         width: 750px;
     }
+    .artistsSection i {
+        display: none;
+    }
 }
 
 
