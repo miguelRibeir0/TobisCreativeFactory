@@ -467,7 +467,9 @@ footer a:visited {
 .ticketInfo {
     font-size: 1.2rem;
     width: calc(100% - 300px);
-    text-align: justify;
+    text-justify: distribute;
+    text-transform: none;
+    font-weight: 500;
 }
 .pricingTicket {
     display: flex;
@@ -627,7 +629,9 @@ footer a:visited {
     width: 60vw;
     margin-bottom: 20px;
     text-align: justify;
-    text-justify: inter-word;
+    text-justify: distribute;
+    font-weight: 500;
+    text-transform: none;
 }
 .aboutText p:nth-child(4) {
     margin-bottom: 50px;
@@ -650,7 +654,6 @@ footer a:visited {
 /* CHECKOUT */
 
 .checkoutWrapper {
-    width: calc(100% - 300px - 100px);
     margin: 150px 0px 100px 100px;
 }
 .itemContainer {
@@ -700,8 +703,9 @@ footer a:visited {
     text-decoration: underline;
     margin: 0 15px;
 }
+
 .checkoutPricing {
-    width: calc(100% - 300px - 100px);
+    width: calc(100% - 300px);
     margin-bottom: 100px;
 }
 .checkoutPricing div {
@@ -961,6 +965,34 @@ footer a:visited {
         font-size: 0.9rem;
         margin-top: 5px;
     }
+
+    /* CHECKOUT */  
+
+    .checkoutWrapper {
+        margin: 100px 0px 100px 70px;
+    }
+    .itemContainer img {
+        width: 250px;
+        height: 200px;
+    }
+    .checkoutInfo h2 {
+        font-size: 1.8rem;
+    }
+    .checkoutInfo h3 {
+        font-size: 1.1rem;
+    }
+    .checkoutInfo p {
+        font-size: 1.6rem;
+    }
+    .checkoutInfo span:last-child {
+        width: 35vw;
+    }
+    .checkoutPricing span p {
+        font-size: 1.9rem;
+    }
+    .checkoutPricing button {
+        font-size: 0.9rem;
+    }
 }
 
 @media screen and (max-width: 1150px) {
@@ -1169,9 +1201,47 @@ footer a:visited {
     .aboutText h2 {
         font-size: 1.8rem;
     }
+
+    /* CHECKOUT */  
+
+
+    .itemContainer img {
+        width: 200px;
+        height: 200px;
+    }
+    .checkoutInfo {
+        margin-left: 70px;
+    }
+    .checkoutInfo h2 {
+        font-size: 1.6rem;
+    }
+    .checkoutInfo h3 {
+        font-size: 0.9rem;
+    }
+    .checkoutInfo p {
+        font-size: 1.4rem;
+    }
+    .checkoutInfo span:last-child {
+        width: 45vw;
+    }
+    .checkoutPricing {
+        width: calc(95%);
+    }
+    .checkoutPricing span p {
+        font-size: 1.7rem;
+    }
+    .checkoutPricing button {
+        font-size: 0.7rem;
+    }
     
 }
 @media screen and (max-width: 750px) {
+    .hamburguer .bar, .hamburguer::after, .hamburguer::before {
+        height: 3px;
+    }
+    .headerMobile a:last-child i {
+        font-size: 1.6rem;
+    }
     .large:nth-child(4) {
         background-size: contain;
         background-repeat: no-repeat;
@@ -1347,5 +1417,47 @@ footer a:visited {
     }
     .socials i:not(:first-child) {
         margin-left: 35px;
+    }
+
+    /* CHECKOUT */  
+
+    .checkoutWrapper {
+        margin: 50px 0px 100px 30px;
+    }
+    .itemContainer {
+        margin-bottom: 50px;
+    }
+    .itemContainer img {
+        width: 100px;
+        height: 100px;
+    }
+    .checkoutInfo {
+        margin-left: 30px;
+    }
+    .checkoutInfo h2 {
+        font-size: 1rem;
+    }
+    .checkoutInfo h3 {
+        font-size: 0.7rem;
+        margin-top: 10px;
+    }
+    .checkoutInfo p {
+        font-size: 0.8rem;
+    }
+    .checkoutInfo span:last-child {
+        width: 45vw;
+    }
+    .checkoutPricing {
+        width: calc(95%);
+    }
+    .checkoutPricing span p {
+        font-size: 1.3rem;
+        margin-right: 40px;
+    }
+    .checkoutPricing button {
+        font-size: 0.5rem;
+    }
+    .mobile {
+        display: none;
     }
 }

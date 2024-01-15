@@ -166,6 +166,9 @@ for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click 
 
 
 
+/* NOT DEPLOYED */
+
+
 const checkoutWrapper = document.querySelector(".checkoutWrapper");
 
 function create(tag, text, className) {   // function that allows us to create tags and add an inner text and class name if needed
@@ -207,7 +210,7 @@ function checkoutMechanic() {
                 span2.appendChild(value);
 };
 
-const buyingBtn = document.getElementById("test");
+const buyingBtn = document.getElementById("test"); // testing on the chekout button at the checkout page
 
 buyingBtn.addEventListener("click", () => {
     checkoutMechanic();
