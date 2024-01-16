@@ -181,6 +181,9 @@ a:visited {
     top: calc(100% - 200px);
     right: calc(100% - 150px);
 }
+.small .rectangle {
+    display: none;
+}
 .large:nth-child(4) .rectangle {
     left: 0;
     top: 50px;
@@ -1056,6 +1059,9 @@ footer a:visited {
     .semicircle {
         display: none;
     }
+    .small .rectangle {
+        display: block;
+    }
     .intro, .event {
         left: 10% !important;
     }
@@ -1241,6 +1247,12 @@ footer a:visited {
 @media screen and (max-width: 750px) {
     .hamburguer .bar, .hamburguer::after, .hamburguer::before {
         height: 3px;
+    }
+    .hamburguer.is-active::before {
+        transform: rotate(-45deg) translate(-4px, 4px);
+    }
+    .hamburguer.is-active::after {
+        transform: rotate(45deg) translate(-8px, -9px);
     }
     .headerMobile a:last-child i {
         font-size: 1.6rem;

@@ -125,14 +125,19 @@ for (let i = 0; i < shopOver.length; i++) { //overlay color for the blocks on th
     }
 }
 
-for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click a shop item
+
+for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click a shop item      
     shopOver[i].addEventListener("click", () => {
         itemPopUp.classList.add("visible");
         itemImage.src = imageSrcs[i];
+        sessionStorage.setItem("imgSrc" + [i].toString(), imageSrcs[i].toString());
         popUpTitle.innerText = itemName[i].innerText;
+        sessionStorage.setItem("title" + [i].toString(), itemName[i].innerText.toString());
         popUpH3.innerText = shopH3[i];
+        sessionStorage.setItem("subTitle" + [i].toString(), shopH3[i].toString());
         popUpText.innerText = shopText[i];
         popUpPrice.innerText = itemPriceP[i].innerText;
+        sessionStorage.setItem("price" + [i].toString(), itemPriceP[i].innerText.toString());
         switch (i) {
             case 0:
                 popUpH3.style.color = "var(--purple)";
@@ -178,36 +183,62 @@ function create(tag, text, className) {   // function that allows us to create t
     return elem;
 }
 
+
+
 function checkoutMechanic() {
-    let itemContainer = create("div", null, "itemContainer");
-    let checkoutImage = create("img");
-    checkoutImage.src = imageSrcs[0];
-    let checkoutInfo = create("div", null, "checkoutInfo");
-    let span1 = create("span");
-    let checkoutName = create("h2", "testtest");
-    let checkoutSize = create("h3", "testststsaaaa");
-    let span2 = create("span");
-    let span2_1 = create("span");
-    let amount = create("p", "Amount:");
-    let minus = create("p", "\u2212"); //unicode in js for -
-    let count = create("p", "1");
-    let plus = create("p", "\u002B"); //unicode in js for +
-    let value = create("p", "29,99€");
 
+    let sessionImg = [];            // storing on variables the values in the session storage
+    let sessionTitle = [];
+    let sessionSub = [];
+    let sessionPrice = [];
 
-    checkoutWrapper.appendChild(itemContainer);
-        itemContainer.appendChild(checkoutImage);
-        itemContainer.appendChild(checkoutInfo);
-            checkoutInfo.appendChild(span1);
-                span1.appendChild(checkoutName);
-                span1.appendChild(checkoutSize);
-            checkoutInfo.appendChild(span2);
-                span2.appendChild(span2_1);
-                    span2_1.appendChild(amount);
-                    span2_1.appendChild(minus);
-                    span2_1.appendChild(count);
-                    span2_1.appendChild(plus);
-                span2.appendChild(value);
+    for (let i = 0; i < sessionStorage.length; i++) {
+        let pushImg  = sessionStorage.getItem("imgSrc" + [i].toString());
+        let pushTitle = sessionStorage.getItem("title" + [i].toString());
+        let pushSub = sessionStorage.getItem("subTitle" + [i].toString());
+        let pushPrice = sessionStorage.getItem("price" + [i].toString());
+        if (pushImg != null) { 
+            sessionImg.push(pushImg);
+            sessionTitle.push(pushTitle);
+            sessionSub.push(pushSub);
+            sessionPrice.push(pushPrice);
+        }
+    }
+
+    for (let i = 0; i < (sessionStorage.length / 4) - 1; i++) {      // sessionStorage.length / 4 because every item has 4 items stored
+
+        let itemContainer = create("div", null, "itemContainer");
+        let checkoutImage = create("img");
+        checkoutImage.src = sessionImg[i];
+        let checkoutInfo = create("div", null, "checkoutInfo");
+        let span1 = create("span");
+        let checkoutName = create("h2", sessionTitle[i]);
+        let checkoutSize = create("h3", sessionSub[i]);
+        let span2 = create("span");
+        let span2_1 = create("span");
+        let amount = create("p", "Amount:");
+        let minus = create("p", "\u2212"); //unicode in js for -
+        let count = create("p", "1");
+        let plus = create("p", "\u002B"); //unicode in js for +
+        let value = create("p", sessionPrice[i]);
+
+        console.log(i);
+        console.log(checkoutName);
+
+        checkoutWrapper.appendChild(itemContainer);
+            itemContainer.appendChild(checkoutImage);
+            itemContainer.appendChild(checkoutInfo);
+                checkoutInfo.appendChild(span1);
+                    span1.appendChild(checkoutName);
+                    span1.appendChild(checkoutSize);
+                checkoutInfo.appendChild(span2);
+                    span2.appendChild(span2_1);
+                        span2_1.appendChild(amount);
+                        span2_1.appendChild(minus);
+                        span2_1.appendChild(count);
+                        span2_1.appendChild(plus);
+                    span2.appendChild(value);
+    }
 };
 
 const buyingBtn = document.getElementById("test"); // testing on the chekout button at the checkout page
