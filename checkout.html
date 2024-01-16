@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/60d8198cd6.js" crossorigin="anonymous"></script>
     <script defer src="js/script.js"></script>
 </head>
-<body>
+<body  onload = "checkoutMechanic()">
     <header>
         <nav>
             <ul>
@@ -47,14 +47,13 @@
             <div class="rectangle red"></div>
             <h1>Check out</h1>
         </section>
-        <section class="checkoutWrapper" style="min-height: 30vh;">
-        </section>
+        <section class="checkoutWrapper" style="min-height: 30vh;"></section>
         <div class="checkoutPricing">
             <div></div>
             <span>
                 <p>Total:</p>
-                <p>39,98€</p>
-                <button id="test">Check Out</button>
+                <p id="totalValue"></p>
+                <button>Check Out</button>
             </span>
         </div>
     </main>

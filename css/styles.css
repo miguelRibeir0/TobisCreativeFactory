@@ -681,9 +681,12 @@ footer a:visited {
 }
 .checkoutInfo h2 {
     font-size: 2.2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 40vw;
 }
 .checkoutInfo h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-top: 15px;
     color: var(--red);
 }
@@ -694,7 +697,6 @@ footer a:visited {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 40vw;
 }
 .checkoutInfo span:last-child span {
     display: flex;
@@ -737,6 +739,12 @@ footer a:visited {
     font-size: 1rem;
     padding: 15px 25px;
     background-color: var(--red);
+    cursor: pointer;
+}
+.itemDelete {
+    display: block;
+    font-size: 1.6rem;
+    opacity: 70%;
     cursor: pointer;
 }
 
@@ -985,7 +993,7 @@ footer a:visited {
         font-size: 1.8rem;
     }
     .checkoutInfo h3 {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
     .checkoutInfo p {
         font-size: 1.6rem;
