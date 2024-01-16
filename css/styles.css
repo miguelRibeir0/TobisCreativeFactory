@@ -703,13 +703,20 @@ footer a:visited {
 }
 .checkoutInfo span:last-child span p:nth-child(2) {
     margin-left: 25px;
+    cursor: pointer;
+    user-select: none;
 }
 .checkoutInfo span:last-child span p:nth-child(3) {
     text-decoration: underline;
     margin: 0 15px;
 }
+.checkoutInfo span:last-child span p:nth-child(4) {
+    cursor: pointer;
+    user-select: none;
+}
 
 .checkoutPricing {
+    display: none;
     width: calc(100% - 300px);
     margin-bottom: 100px;
 }

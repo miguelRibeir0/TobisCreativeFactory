@@ -214,6 +214,11 @@ function checkoutMechanic() {
         
     }
 
+    if (sessionStorage.length >= 1) {
+        let checkoutBar = document.querySelector(".checkoutPricing");
+        checkoutBar.style.display = "block";
+    }
+
     for (let i = 0; i < (sessionStorage.length / 4 - 1); i++) {      // sessionStorage.length / 4 because every item has 4 items stored
 
         let itemContainer = create("div", null, "itemContainer");
@@ -234,13 +239,35 @@ function checkoutMechanic() {
 
         x.addEventListener("click", () => {
             itemContainer.style.display = "none";
-            for (let i = 0; i < sessionStorage.length; i ++) {
-                sessionStorage.removeItem("imgSrc" + [i].toString());
-                sessionStorage.removeItem("title" + [i].toString());
-                sessionStorage.removeItem("subTitle" + [i].toString());
-                sessionStorage.removeItem("price" + [i].toString());
+        })
+
+        let quantity = 1;
+        let retain = total[i]; //to retain the inital value
+        let finalValue = 0;
+
+        minus.addEventListener("click", () => {
+            if (quantity == 1) {
+                quantity = 1;
+            } else {
+                quantity--;
+                total[i] = total[i] - retain;
+                count.innerText = quantity;
+                value.innerText = total[i].toFixed(2) + "€";
+            }
+
+        })
+
+        plus.addEventListener("click", () => {
+            if (quantity == 10) {
+                quantity = 10;
+            } else {
+                quantity++;
+                total[i] = total[i] + retain;
+                count.innerText = quantity;
+                value.innerText = total[i].toFixed(2) + "€";
             }
         })
+
 
         checkoutWrapper.appendChild(itemContainer);
             itemContainer.appendChild(checkoutImage);
@@ -256,7 +283,11 @@ function checkoutMechanic() {
                         span2_1.appendChild(count);
                         span2_1.appendChild(plus);
                     span2.appendChild(value);
+
+        
     }
+    console.log(total);
+
     let totalDisplay = 0;
 
     for (let i = 0; i < total.length; i++) {
@@ -265,4 +296,5 @@ function checkoutMechanic() {
 
    let totalContainer = document.getElementById("totalValue"); //sum of all the product value
    totalContainer.innerText = totalDisplay + " €";
+
 };
