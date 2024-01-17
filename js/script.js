@@ -219,7 +219,17 @@ function checkoutMechanic() {
         checkoutBar.style.display = "block";
     }
 
-    for (let i = 0; i < (sessionStorage.length / 4 - 1); i++) {      // sessionStorage.length / 4 because every item has 4 items stored
+
+    let totalDisplay = 0;
+
+    for (let i = 0; i < total.length; i++) {
+        totalDisplay += total[i];
+      }
+    
+    let totalContainer = document.getElementById("totalValue"); //sum of all the product value
+    totalContainer.innerText = totalDisplay + " €";
+
+    for (let i = 0; i < (sessionStorage.length / 4); i++) {      // sessionStorage.length / 4 because every item has 4 items stored
 
         let itemContainer = create("div", null, "itemContainer");
         let checkoutImage = create("img");
@@ -237,13 +247,9 @@ function checkoutMechanic() {
         let plus = create("p", "\u002B"); //unicode in js for +
         let value = create("p", sessionPrice[i]);
 
-        x.addEventListener("click", () => {
-            itemContainer.style.display = "none";
-        })
 
         let quantity = 1;
         let retain = total[i]; //to retain the inital value
-        let finalValue = 0;
 
         minus.addEventListener("click", () => {
             if (quantity == 1) {
@@ -253,6 +259,9 @@ function checkoutMechanic() {
                 total[i] = total[i] - retain;
                 count.innerText = quantity;
                 value.innerText = total[i].toFixed(2) + "€";
+
+                totalDisplay = totalDisplay - retain;
+                totalContainer.innerText = totalDisplay.toFixed(2) + " €";  
             }
 
         })
@@ -265,7 +274,16 @@ function checkoutMechanic() {
                 total[i] = total[i] + retain;
                 count.innerText = quantity;
                 value.innerText = total[i].toFixed(2) + "€";
+
+                totalDisplay =  totalDisplay + retain;
+                totalContainer.innerText = totalDisplay.toFixed(2) + " €";    
             }
+        })
+
+        x.addEventListener("click", () => {
+            itemContainer.style.display = "none";
+            totalDisplay = totalDisplay - total[i];
+            totalContainer.innerText = totalDisplay.toFixed(2) + " €"; 
         })
 
 
@@ -286,15 +304,4 @@ function checkoutMechanic() {
 
         
     }
-    console.log(total);
-
-    let totalDisplay = 0;
-
-    for (let i = 0; i < total.length; i++) {
-        totalDisplay += total[i];
-      }
-
-   let totalContainer = document.getElementById("totalValue"); //sum of all the product value
-   totalContainer.innerText = totalDisplay + " €";
-
 };
