@@ -15,30 +15,53 @@ const popUpText = document.querySelector(".card .ticketInformation p");
 const popUpBtn = document.querySelector(".card .pricingTicket button");
 const popUpPrice = document.querySelector(".card .pricingTicket p");
 
-let artists = ["Pedro Álvaro", "Duarte Marques", "Ana Martins" , "Josez", "Carla Vento", "Miguel Afonso", "Rodrigo Bruno", "Jzrt", "Bruno Maymone", "dzrt", "Carlos afonso", "Beatriz Beto", "catarina silva"];
-let colorsOverlay = ["rgba(226, 160, 65, 0.5)", "rgba(126, 226, 65, 0.5)", "rgba(226, 65, 220, 0.5)", "rgba(226, 65, 65, 0.5)", "rgba(78, 65, 226, 0.5)"]; //order = orange[0],green[1],purple[2],red[3],blue[4]
-let imageSrcs = ["images/caderno.jpg", "images/tape mockup.jpg", "images/PAPER BAG.jpg", "images/toolbag.jpg", "images/T-shirt 2.jpg", "images/T-shirt 1.jpg", "images/calendario.jpg", "images/Steel Mugs Minimalistic Mockup.jpg"];
-let shopText = [
-    "This recycled notebook is a sustainable and environmentally-friendly writing companion. It is created using paper that has been processed from post-consumer waste or recycled materials, reducing the need for fresh paper production and minimizing deforestation. These notebooks often feature covers made from recycled cardboard or other eco-friendly materials.",
+const artists = ["Pedro Álvaro", "Duarte Marques", "Ana Martins" , "Josez", "Carla Vento", "Miguel Afonso", "Rodrigo Bruno", "Jzrt", "Bruno Maymone", "dzrt", "Carlos afonso", "Beatriz Beto", "catarina silva"];
+const colorsOverlay = ["rgba(226, 160, 65, 0.5)", "rgba(126, 226, 65, 0.5)", "rgba(226, 65, 220, 0.5)", "rgba(226, 65, 65, 0.5)", "rgba(78, 65, 226, 0.5)"]; //order = orange[0],green[1],purple[2],red[3],blue[4]
 
-    "Introducing our innovative sticker tape product—a versatile and convenient solution for all your adhesive needs. This sticker tape is designed to provide a hassle-free way to stick and secure items effortlessly. Whether you're organizing your workspace, crafting, or wrapping gifts, this adhesive tape is a reliable and efficient companion.",
-
-    "Introducing our eco-friendly recycled paper bag, the perfect companion for your sustainable shopping experience. This paper bag is thoughtfully crafted from recycled materials, reducing the demand for new paper production and minimizing environmental impact. Its sturdy construction ensures reliable strength and durability, making it capable of carrying your groceries, clothing ..",
-
-    "Introducing our recycled gym bag, a sustainable choice for the fitness enthusiast on the go. This bag is crafted from recycled materials, embodying our commitment to environmental responsibility. Its durable design ensures longevity, capable of withstanding the demands of your active lifestyle. With ample storage space and thoughtful compartmentalization, it accommodat ..",
-
-    "Introducing our Organic Cotton T-Shirt, a sustainable and conscious choice for your wardrobe. Crafted from 100% organic cotton, this shirt embodies a commitment to both comfort and environmental responsibility. Grown without synthetic pesticides or fertilizers, organic cotton promotes soil health and reduces the environmental impact associated with conventional cotton.",
-
-    "Introducing our Organic Cotton T-Shirt, a sustainable and conscious choice for your wardrobe. Crafted from 100% organic cotton, this shirt embodies a commitment to both comfort and environmental responsibility. Grown without synthetic pesticides or fertilizers, organic cotton promotes soil health and reduces the environmental impact associated with conventional cotton.",
-
-    "Introducing our Recycled Calendar, a thoughtful blend of functionality and sustainability. This calendar is crafted with a commitment to the environment, utilizing recycled materials to minimize its ecological footprint. Each month is a testament to responsible living, featuring recycled paper that otherwise would contribute to waste. The calendar's design is both stylish ..",
-
-    "Introducing our Ceramic Mug, a perfect blend of timeless style and functional elegance. Crafted with precision from high-quality ceramic, this mug offers a delightful way to savor your favorite beverages. The smooth, glazed surface not only adds a touch of sophistication but also makes for easy cleaning. Its sturdy handle provides a comfortable grip, ensuring a pleasurable .."
-];
-let shopH3 = ["recycled paper 300gm","BIO-DEGRADABLE 5X5CM STICKERS", "RECYCLED PAPER BAG 300/GM", "100% recycled polyester","250gsm organic cotton","250gsm organic cotton","recycled paper 400gm","ceramic mug"];
 let windowWidth = window.matchMedia("(min-width: 1151px)");
 
-
+const shopItems = [
+    {
+        imageSrc: "images/caderno.jpg",
+        description: "This recycled notebook is a sustainable and environmentally-friendly writing companion. It is created using paper that has been processed from post-consumer waste or recycled materials, reducing the need for fresh paper production and minimizing deforestation. These notebooks often feature covers made from recycled cardboard or other eco-friendly materials.",
+        subtitle: "recycled paper 300gm",
+    },
+    {
+        imageSrc: "images/tape mockup.jpg",
+        description: "Introducing our innovative sticker tape product—a versatile and convenient solution for all your adhesive needs. This sticker tape is designed to provide a hassle-free way to stick and secure items effortlessly. Whether you're organizing your workspace, crafting, or wrapping gifts, this adhesive tape is a reliable and efficient companion.",
+        subtitle: "BIO-DEGRADABLE 5X5CM STICKERS",
+    },
+    {
+        imageSrc: "images/PAPER BAG.jpg",
+        description: "Introducing our eco-friendly recycled paper bag, the perfect companion for your sustainable shopping experience. This paper bag is thoughtfully crafted from recycled materials, reducing the demand for new paper production and minimizing environmental impact. Its sturdy construction ensures reliable strength and durability, making it capable of carrying your groceries, clothing ..",
+        subtitle: "RECYCLED PAPER BAG 300/GM",
+    },
+    {
+        imageSrc: "images/toolbag.jpg",
+        description: "Introducing our recycled gym bag, a sustainable choice for the fitness enthusiast on the go. This bag is crafted from recycled materials, embodying our commitment to environmental responsibility. Its durable design ensures longevity, capable of withstanding the demands of your active lifestyle. With ample storage space and thoughtful compartmentalization, it accommodat ..",
+        subtitle: "100% recycled polyester",
+    },
+    {
+        imageSrc: "images/T-shirt 2.jpg",
+        description: "Introducing our Organic Cotton T-Shirt, a sustainable and conscious choice for your wardrobe. Crafted from 100% organic cotton, this shirt embodies a commitment to both comfort and environmental responsibility. Grown without synthetic pesticides or fertilizers, organic cotton promotes soil health and reduces the environmental impact associated with conventional cotton.",
+        subtitle: "250gsm organic cotton",
+    },
+    {
+        imageSrc: "images/T-shirt 1.jpg",
+        description: "Introducing our Organic Cotton T-Shirt, a sustainable and conscious choice for your wardrobe. Crafted from 100% organic cotton, this shirt embodies a commitment to both comfort and environmental responsibility. Grown without synthetic pesticides or fertilizers, organic cotton promotes soil health and reduces the environmental impact associated with conventional cotton.",
+        subtitle: "250gsm organic cotton",
+    },
+    {
+        imageSrc: "images/calendario.jpg",
+        description:  "Introducing our Recycled Calendar, a thoughtful blend of functionality and sustainability. This calendar is crafted with a commitment to the environment, utilizing recycled materials to minimize its ecological footprint. Each month is a testament to responsible living, featuring recycled paper that otherwise would contribute to waste. The calendar's design is both stylish ..",
+        subtitle: "recycled paper 400gm",
+    },
+    {
+        imageSrc: "images/Steel Mugs Minimalistic Mockup.jpg",
+        description:   "Introducing our Ceramic Mug, a perfect blend of timeless style and functional elegance. Crafted with precision from high-quality ceramic, this mug offers a delightful way to savor your favorite beverages. The smooth, glazed surface not only adds a touch of sophistication but also makes for easy cleaning. Its sturdy handle provides a comfortable grip, ensuring a pleasurable ..",
+        subtitle: "ceramic mug",
+    }
+];
 
 
 let isDragStart = false, prevPageX, prevScrollLeft;
@@ -125,14 +148,13 @@ for (let i = 0; i < shopOver.length; i++) { //overlay color for the blocks on th
     }
 }
 
-
 for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click a shop item      
     shopOver[i].addEventListener("click", () => {
         itemPopUp.classList.add("visible");
-        itemImage.src = imageSrcs[i];
+        itemImage.src = shopItems[i].imageSrc;
         popUpTitle.innerText = itemName[i].innerText;
-        popUpH3.innerText = shopH3[i];
-        popUpText.innerText = shopText[i];
+        popUpH3.innerText = shopItems[i].subtitle;
+        popUpText.innerText = shopItems[i].description;
         popUpPrice.innerText = itemPriceP[i].innerText;
 
         switch (i) {
@@ -158,10 +180,10 @@ for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click 
                 popUpBtn.style.backgroundColor = "var(--orange)";
         }
         popUpBtn.addEventListener("click", () => {
-            sessionStorage.setItem("imgSrc" + [i].toString(), imageSrcs[i].toString());
-            sessionStorage.setItem("title" + [i].toString(), itemName[i].innerText.toString());
-            sessionStorage.setItem("subTitle" + [i].toString(), shopH3[i].toString());
-            sessionStorage.setItem("price" + [i].toString(), itemPriceP[i].innerText.toString());
+            sessionStorage.setItem("imgSrc" + [i].toString(), shopItems[i].imageSrc);
+            sessionStorage.setItem("title" + [i].toString(), itemName[i].innerText);
+            sessionStorage.setItem("subTitle" + [i].toString(), shopItems[i].subtitle);
+            sessionStorage.setItem("price" + [i].toString(), itemPriceP[i].innerText);
         })
     })
     itemPopUp.addEventListener("click", (event) => {
@@ -170,10 +192,6 @@ for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click 
         }
     })
 }
-
-
-
-/* NOT DEPLOYED */
 
 
 const checkoutWrapper = document.querySelector(".checkoutWrapper");
@@ -189,10 +207,7 @@ function create(tag, text, className) {   // function that allows us to create t
 
 function checkoutMechanic() {
 
-    let sessionImg = [];            // storing on variables the values in the session storage
-    let sessionTitle = [];
-    let sessionSub = [];
-    let sessionPrice = [];
+    let cartItems = [];    // storing on variables the values in the session storage
     let total = [];
 
     for (let i = 0; i < sessionStorage.length; i++) {
@@ -201,10 +216,14 @@ function checkoutMechanic() {
         let pushSub = sessionStorage.getItem("subTitle" + [i].toString());
         let pushPrice = sessionStorage.getItem("price" + [i].toString());
         if (pushImg != null) { 
-            sessionImg.push(pushImg);
-            sessionTitle.push(pushTitle);
-            sessionSub.push(pushSub);
-            sessionPrice.push(pushPrice);
+            cartItems.push(
+                {
+                    imageSrc: pushImg,
+                    itemTitle: pushTitle,
+                    itemDescription: pushSub,
+                    itemPrice: pushPrice,    
+                }
+            );
 
             let trash = pushPrice.split("");            //since I didnt separate the € from the numbers before i have to do it here so i can turn my string into a number
             let decimalNumber = trash.join("");
@@ -213,31 +232,29 @@ function checkoutMechanic() {
         }
         
     }
-
     if (sessionStorage.length >= 1) {
         let checkoutBar = document.querySelector(".checkoutPricing");
         checkoutBar.style.display = "block";
     }
 
-
     let totalDisplay = 0;
 
-    for (let i = 0; i < total.length; i++) {
+    for (let i = 0; i < total.length; i++) {  //sum of all the product value
         totalDisplay += total[i];
       }
     
-    let totalContainer = document.getElementById("totalValue"); //sum of all the product value
+    let totalContainer = document.getElementById("totalValue"); 
     totalContainer.innerText = totalDisplay.toFixed(2) + " €";
 
     for (let i = 0; i < (sessionStorage.length / 4); i++) {      // sessionStorage.length / 4 because every item has 4 items stored
 
         let itemContainer = create("div", null, "itemContainer");
         let checkoutImage = create("img");
-        checkoutImage.src = sessionImg[i];
+        checkoutImage.src = cartItems[i].imageSrc;
         let checkoutInfo = create("div", null, "checkoutInfo");
         let span1 = create("span");
-        let checkoutName = create("h2", sessionTitle[i]);
-        let checkoutSub = create("h3", sessionSub[i]);
+        let checkoutName = create("h2", cartItems[i].itemTitle);
+        let checkoutSub = create("h3", cartItems[i].itemDescription);
         let x = create("span", "x", "itemDelete")
         let span2 = create("span", null, "bottomInfo");
         let span2_1 = create("span");
@@ -245,13 +262,13 @@ function checkoutMechanic() {
         let minus = create("p", "\u2212"); //unicode in js for -
         let count = create("p", "1");
         let plus = create("p", "\u002B"); //unicode in js for +
-        let value = create("p", sessionPrice[i]);
+        let value = create("p", cartItems[i].itemPrice);
 
 
         let quantity = 1;
         let retain = total[i]; //to retain the inital value
 
-        minus.addEventListener("click", () => {
+        minus.addEventListener("click", () => {     // altering the quantity
             if (quantity == 1) {
                 quantity = 1;
             } else {
@@ -266,7 +283,7 @@ function checkoutMechanic() {
 
         })
 
-        plus.addEventListener("click", () => {
+        plus.addEventListener("click", () => {    // altering the quantity
             if (quantity == 10) {
                 quantity = 10;
             } else {
@@ -280,14 +297,14 @@ function checkoutMechanic() {
             }
         })
 
-        x.addEventListener("click", () => {
+        x.addEventListener("click", () => {      // deleting items
             itemContainer.style.display = "none";
             totalDisplay = totalDisplay - total[i];
             totalContainer.innerText = totalDisplay.toFixed(2) + " €"; 
         })
 
 
-        checkoutWrapper.appendChild(itemContainer);
+        checkoutWrapper.appendChild(itemContainer);   // creating items
             itemContainer.appendChild(checkoutImage);
             itemContainer.appendChild(checkoutInfo);
                 checkoutInfo.appendChild(span1);
@@ -301,7 +318,5 @@ function checkoutMechanic() {
                         span2_1.appendChild(count);
                         span2_1.appendChild(plus);
                     span2.appendChild(value);
-
-        
     }
 };

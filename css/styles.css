@@ -14,7 +14,7 @@ body {
     font-family: 'Hanken Grotesk', sans-serif;
     font-weight: 500;
 }
-ul {                            /* nav side-bar */
+nav div {                            /* nav side-bar */
     position: fixed;
     top: 0;
     right: 0;
@@ -1021,7 +1021,7 @@ footer a:visited {
 }
 
 @media screen and (max-width: 1150px) {
-    nav ul {
+    nav div {
         display: none;
     }
     .headerMobile {
@@ -1272,6 +1272,9 @@ footer a:visited {
     
 }
 @media screen and (max-width: 750px) {
+    #centeredLogo {
+        width: 25%;
+    }
     .hamburguer .bar, .hamburguer::after, .hamburguer::before {
         height: 3px;
     }
