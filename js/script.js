@@ -227,7 +227,7 @@ function checkoutMechanic() {
       }
     
     let totalContainer = document.getElementById("totalValue"); //sum of all the product value
-    totalContainer.innerText = totalDisplay + " €";
+    totalContainer.innerText = totalDisplay.toFixed(2) + " €";
 
     for (let i = 0; i < (sessionStorage.length / 4); i++) {      // sessionStorage.length / 4 because every item has 4 items stored
 
@@ -239,7 +239,7 @@ function checkoutMechanic() {
         let checkoutName = create("h2", sessionTitle[i]);
         let checkoutSub = create("h3", sessionSub[i]);
         let x = create("span", "x", "itemDelete")
-        let span2 = create("span");
+        let span2 = create("span", null, "bottomInfo");
         let span2_1 = create("span");
         let amount = create("p", "Amount:");
         let minus = create("p", "\u2212"); //unicode in js for -
