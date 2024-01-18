@@ -28,6 +28,25 @@ nav div {                            /* nav side-bar */
     z-index: 2;
     background-color: white;
 }
+nav div a:last-child {
+    position: relative;
+}
+.cartCounter {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -12px;
+    left: 22px;
+    height: 25px;
+    width: 25px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.cartCounterNumber {
+    display: none;
+    color: white;
+}
 a {
     text-decoration: none;
     color: inherit;
@@ -66,6 +85,9 @@ a:visited {
 
 .headerMobile { 
     display: none;
+}
+.headerMobile a:last-child {
+    position: relative;
 }
 .mobileNav a {
     display: none;
@@ -1512,6 +1534,13 @@ footer a:visited {
         display: none;
     }
     .itemDelete {
+        font-size: 0.8rem;
+    }
+    .cartCounter {
+        height: 20px;
+        width: 20px;
+    }
+    .cartCounterNumber {
         font-size: 0.8rem;
     }
 }

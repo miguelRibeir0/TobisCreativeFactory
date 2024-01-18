@@ -1,25 +1,18 @@
-const menuBtn = document.querySelector(".hamburguer");
+const menuBtn = document.querySelector(".hamburguer"); //nav
 const mobileMenu = document.querySelector(".mobileNav");
-const carousel = document.querySelectorAll(".photoGallery");
+
+const carousel = document.querySelectorAll(".photoGallery"); //artists
 const photoOver = document.querySelectorAll(".blockOverlay");
 const photoText = document.querySelectorAll(".oBlockText");
-const shopOver = document.querySelectorAll(".blockOverlay2");
+const artists = ["Pedro Álvaro", "Duarte Marques", "Ana Martins" , "Josez", "Carla Vento", "Miguel Afonso", "Rodrigo Bruno", "Jzrt", "Bruno Maymone", "dzrt", "Carlos afonso", "Beatriz Beto", "catarina silva"];
+const colorsOverlay = ["rgba(226, 160, 65, 0.5)", "rgba(126, 226, 65, 0.5)", "rgba(226, 65, 220, 0.5)", "rgba(226, 65, 65, 0.5)", "rgba(78, 65, 226, 0.5)"]; //order = orange[0],green[1],purple[2],red[3],blue[4]
+
+const shopOver = document.querySelectorAll(".blockOverlay2"); //shop
 const itemPrice = document.querySelectorAll(".itemPricing");
 const itemPopUp = document.querySelector(".itemPopUp");
 const itemImage = document.querySelector(".itemPopUp img");
 const itemName = document.querySelectorAll(".itemPricing h4");
 const itemPriceP = document.querySelectorAll(".itemPricing p");
-const popUpTitle = document.querySelector(".card .ticketInformation h1");
-const popUpH3 = document.querySelector(".card .ticketInformation h3");
-const popUpText = document.querySelector(".card .ticketInformation p");
-const popUpBtn = document.querySelector(".card .pricingTicket button");
-const popUpPrice = document.querySelector(".card .pricingTicket p");
-
-const artists = ["Pedro Álvaro", "Duarte Marques", "Ana Martins" , "Josez", "Carla Vento", "Miguel Afonso", "Rodrigo Bruno", "Jzrt", "Bruno Maymone", "dzrt", "Carlos afonso", "Beatriz Beto", "catarina silva"];
-const colorsOverlay = ["rgba(226, 160, 65, 0.5)", "rgba(126, 226, 65, 0.5)", "rgba(226, 65, 220, 0.5)", "rgba(226, 65, 65, 0.5)", "rgba(78, 65, 226, 0.5)"]; //order = orange[0],green[1],purple[2],red[3],blue[4]
-
-let windowWidth = window.matchMedia("(min-width: 1151px)");
-
 const shopItems = [
     {
         imageSrc: "images/caderno.jpg",
@@ -62,6 +55,16 @@ const shopItems = [
         subtitle: "ceramic mug",
     }
 ];
+const popUpTitle = document.querySelector(".card .ticketInformation h1");
+const popUpH3 = document.querySelector(".card .ticketInformation h3");
+const popUpText = document.querySelector(".card .ticketInformation p");
+const popUpBtn = document.querySelector(".card .pricingTicket button");
+const popUpPrice = document.querySelector(".card .pricingTicket p");
+
+const cartCounter = document.querySelectorAll(".cartCounter"); //checkout
+const cartCounterNumber = document.querySelectorAll(".cartCounterNumber");
+
+let windowWidth = window.matchMedia("(min-width: 1151px)");
 
 
 let isDragStart = false, prevPageX, prevScrollLeft;
@@ -184,6 +187,11 @@ for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click 
             sessionStorage.setItem("title" + [i].toString(), itemName[i].innerText);
             sessionStorage.setItem("subTitle" + [i].toString(), shopItems[i].subtitle);
             sessionStorage.setItem("price" + [i].toString(), itemPriceP[i].innerText);
+            for (let i = 0; i < cartCounter.length; i++) {
+                cartCounter[i].style.display = "flex";
+                cartCounterNumber[i].style.display = "block";
+                cartCounterNumber[i].innerText = sessionStorage.length / 4;
+            }
         })
     })
     itemPopUp.addEventListener("click", (event) => {
@@ -194,7 +202,6 @@ for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click 
 }
 
 
-const checkoutWrapper = document.querySelector(".checkoutWrapper");
 
 function create(tag, text, className) {   // function that allows us to create tags and add an inner text and class name if needed
     const elem = document.createElement(tag);
@@ -248,21 +255,22 @@ function checkoutMechanic() {
 
     for (let i = 0; i < (sessionStorage.length / 4); i++) {      // sessionStorage.length / 4 because every item has 4 items stored
 
-        let itemContainer = create("div", null, "itemContainer");
-        let checkoutImage = create("img");
+        const checkoutWrapper = document.querySelector(".checkoutWrapper");
+        const itemContainer = create("div", null, "itemContainer");
+        const checkoutImage = create("img");
         checkoutImage.src = cartItems[i].imageSrc;
-        let checkoutInfo = create("div", null, "checkoutInfo");
-        let span1 = create("span");
-        let checkoutName = create("h2", cartItems[i].itemTitle);
-        let checkoutSub = create("h3", cartItems[i].itemDescription);
-        let x = create("span", "x", "itemDelete")
-        let span2 = create("span", null, "bottomInfo");
-        let span2_1 = create("span");
-        let amount = create("p", "Amount:");
-        let minus = create("p", "\u2212"); //unicode in js for -
-        let count = create("p", "1");
-        let plus = create("p", "\u002B"); //unicode in js for +
-        let value = create("p", cartItems[i].itemPrice);
+        const checkoutInfo = create("div", null, "checkoutInfo");
+        const span1 = create("span");
+        const checkoutName = create("h2", cartItems[i].itemTitle);
+        const checkoutSub = create("h3", cartItems[i].itemDescription);
+        const x = create("span", "x", "itemDelete")
+        const span2 = create("span", null, "bottomInfo");
+        const span2_1 = create("span");
+        const amount = create("p", "Amount:");
+        const minus = create("p", "\u2212"); //unicode in js for -
+        const count = create("p", "1");
+        const plus = create("p", "\u002B"); //unicode in js for +
+        const value = create("p", cartItems[i].itemPrice);
 
 
         let quantity = 1;
