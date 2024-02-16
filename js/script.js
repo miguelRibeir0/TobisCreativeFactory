@@ -58,11 +58,11 @@ const shopItems = [
 const popUpTitle = document.querySelector(".card .ticketInformation h1");
 const popUpH3 = document.querySelector(".card .ticketInformation h3");
 const popUpText = document.querySelector(".card .ticketInformation p");
-const popUpBtn = document.querySelector(".card .pricingTicket button");
+const popUpBtn = document.querySelectorAll(".card .pricingTicket button");
 const popUpPrice = document.querySelector(".card .pricingTicket p");
 
-const cartCounter = document.querySelectorAll(".cartCounter"); //checkout
-const cartCounterNumber = document.querySelectorAll(".cartCounterNumber");
+const cartCounter = document.querySelector(".cartCounter"); //checkout
+const cartCounterNumber = document.querySelector(".cartCounterNumber");
 
 let windowWidth = window.matchMedia("(min-width: 1151px)");
 
@@ -149,59 +149,73 @@ for (let i = 0; i < shopOver.length; i++) { //overlay color for the blocks on th
         shopOver[i].style.opacity = "0%";
     })
     }
+
+let currentIndex; //assignign a current index so ONLY the sleected item gets added to the cart
+
+const addToCheckout = () => {
+  localStorage.setItem("imgSrc" + currentIndex.toString(), shopItems[currentIndex].imageSrc);
+  localStorage.setItem("title" + currentIndex.toString(), itemName[currentIndex].innerText);
+  localStorage.setItem("subTitle" + currentIndex.toString(), shopItems[currentIndex].subtitle);
+  localStorage.setItem("price" + currentIndex.toString(), itemPriceP[currentIndex].innerText);
+
+  addToCart();
+};
+
+for (let i = 0; i < shopOver.length; i++) {
+  shopOver[i].addEventListener("click", (event1) => {
+    currentIndex = i;   //updtating the current index on click
+    itemPopUp.classList.add("visible");
+    itemImage.src = shopItems[i].imageSrc;
+    popUpTitle.innerText = itemName[i].innerText;
+    popUpH3.innerText = shopItems[i].subtitle;
+    popUpText.innerText = shopItems[i].description;
+    popUpPrice.innerText = itemPriceP[i].innerText;
+
+    switch (i) {
+      case 0:
+        popUpH3.style.color = "var(--purple)";
+        popUpBtn[0].style.backgroundColor = "var(--purple)";
+        break;
+      case 4:
+        popUpH3.style.color = "var(--blue)";
+        popUpBtn[0].style.backgroundColor = "var(--blue)";
+        break;
+      case 7:
+        popUpH3.style.color = "var(--green)";
+        popUpBtn[0].style.backgroundColor = "var(--green)";
+        break;
+      case 1:
+      case 6:
+        popUpH3.style.color = "var(--red)";
+        popUpBtn[0].style.backgroundColor = "var(--red)";
+        break;
+      default:
+        popUpH3.style.color = "var(--orange)";
+        popUpBtn[0].style.backgroundColor = "var(--orange)";
+    }
+  });
 }
 
-for (let i = 0; i < shopOver.length; i++) {  // block pop up for when you click a shop item      
-    shopOver[i].addEventListener("click", () => {
-        itemPopUp.classList.add("visible");
-        itemImage.src = shopItems[i].imageSrc;
-        popUpTitle.innerText = itemName[i].innerText;
-        popUpH3.innerText = shopItems[i].subtitle;
-        popUpText.innerText = shopItems[i].description;
-        popUpPrice.innerText = itemPriceP[i].innerText;
+popUpBtn[0].addEventListener("click", addToCheckout);
 
-        switch (i) {
-            case 0:
-                popUpH3.style.color = "var(--purple)";
-                popUpBtn.style.backgroundColor = "var(--purple)";
-                break
-            case 4:
-                popUpH3.style.color = "var(--blue)";
-                popUpBtn.style.backgroundColor = "var(--blue)";
-                break
-            case 7:
-                popUpH3.style.color = "var(--green)";
-                popUpBtn.style.backgroundColor = "var(--green)";
-                break
-            case 1:
-            case 6:
-                popUpH3.style.color = "var(--red)";
-                popUpBtn.style.backgroundColor = "var(--red)";
-                break
-            default:
-                popUpH3.style.color = "var(--orange)";
-                popUpBtn.style.backgroundColor = "var(--orange)";
-        }
-        popUpBtn.addEventListener("click", () => {
-            sessionStorage.setItem("imgSrc" + [i].toString(), shopItems[i].imageSrc);
-            sessionStorage.setItem("title" + [i].toString(), itemName[i].innerText);
-            sessionStorage.setItem("subTitle" + [i].toString(), shopItems[i].subtitle);
-            sessionStorage.setItem("price" + [i].toString(), itemPriceP[i].innerText);
-            for (let i = 0; i < cartCounter.length; i++) {
-                cartCounter[i].style.display = "flex";
-                cartCounterNumber[i].style.display = "block";
-                cartCounterNumber[i].innerText = sessionStorage.length / 4;
-            }
-        })
-    })
-    itemPopUp.addEventListener("click", (event) => {
-        if (event.target === itemPopUp) {
-            itemPopUp.classList.remove("visible");
-        }
-    })
+itemPopUp.addEventListener("click", (event) => {
+    if (event.target === itemPopUp) {
+        itemPopUp.classList.remove("visible");
+    }
+})
 }
 
+const addToCart = () => {
+    cartCounter.style.display = "flex";
+    cartCounterNumber.style.display = "block";
 
+    if (localStorage.length === 0) {
+        cartCounter.style.display = "none";
+        cartCounterNumber.style.display = "none";
+    } else {
+        cartCounterNumber.innerText = localStorage.length / 4;
+    }
+    }
 
 function create(tag, text, className) {   // function that allows us to create tags and add an inner text and class name if needed
     const elem = document.createElement(tag);
@@ -214,32 +228,38 @@ function create(tag, text, className) {   // function that allows us to create t
 
 function checkoutMechanic() {
 
-    let cartItems = [];    // storing on variables the values in the session storage
-    let total = [];
+let cartItems = [];    // storing on variables the values in the local storage
+let total = [];
 
-    for (let i = 0; i < sessionStorage.length; i++) {
-        let pushImg  = sessionStorage.getItem("imgSrc" + [i].toString());
-        let pushTitle = sessionStorage.getItem("title" + [i].toString());
-        let pushSub = sessionStorage.getItem("subTitle" + [i].toString());
-        let pushPrice = sessionStorage.getItem("price" + [i].toString());
-        if (pushImg != null) { 
-            cartItems.push(
-                {
-                    imageSrc: pushImg,
-                    itemTitle: pushTitle,
-                    itemDescription: pushSub,
-                    itemPrice: pushPrice,    
-                }
-            );
+for (let i = 0; i < localStorage.length; i++) {
+    let pushImg  = localStorage.getItem("imgSrc" + [i].toString());
+    let pushTitle = localStorage.getItem("title" + [i].toString());
+    let pushSub = localStorage.getItem("subTitle" + [i].toString());
+    let pushPrice = localStorage.getItem("price" + [i].toString());
+    if (pushImg != null) { 
+        cartItems.push(
+            {
+                imageSrc: pushImg,
+                itemTitle: pushTitle,
+                itemDescription: pushSub,
+                itemPrice: pushPrice,
+                itemNumber: i,   // Store the number as part of the item object
+            }
+        );
 
-            let trash = pushPrice.split("");            //since I didnt separate the € from the numbers before i have to do it here so i can turn my string into a number
-            let decimalNumber = trash.join("");
-            let number = parseFloat(decimalNumber.replace(',', '.'));
-            total.push(number);
-        }
-        
+        let trash = pushPrice.split("");   //Since I didnt separate the € from the numbers before i have to do it here so i can turn my string into a number
+        let decimalNumber = trash.join("");
+        let number = parseFloat(decimalNumber.replace(',', '.'));
+        total.push(number);
     }
-    if (sessionStorage.length >= 1) {
+    
+}
+
+    // Sort cartItems based on itemNumber (so we can delete them after)
+    cartItems.sort((a, b) => a.itemNumber - b.itemNumber);
+
+
+    if (localStorage.length >= 1) {
         let checkoutBar = document.querySelector(".checkoutPricing");
         checkoutBar.style.display = "block";
     }
@@ -253,7 +273,7 @@ function checkoutMechanic() {
     let totalContainer = document.getElementById("totalValue"); 
     totalContainer.innerText = totalDisplay.toFixed(2) + " €";
 
-    for (let i = 0; i < (sessionStorage.length / 4); i++) {      // sessionStorage.length / 4 because every item has 4 items stored
+    for (let i = 0; i < (localStorage.length / 4); i++) {      // localStorage.length / 4 because every item has 4 items stored
 
         const checkoutWrapper = document.querySelector(".checkoutWrapper");
         const itemContainer = create("div", null, "itemContainer");
@@ -308,7 +328,11 @@ function checkoutMechanic() {
         x.addEventListener("click", () => {      // deleting items
             itemContainer.style.display = "none";
             totalDisplay = totalDisplay - total[i];
-            totalContainer.innerText = totalDisplay.toFixed(2) + " €"; 
+            totalContainer.innerText = totalDisplay.toFixed(2) + " €";
+            localStorage.removeItem("imgSrc" + cartItems[i].itemNumber); //removing the items from the local storage (using the item number to identify them)
+            localStorage.removeItem("title" + cartItems[i].itemNumber);
+            localStorage.removeItem("subTitle" + cartItems[i].itemNumber);
+            localStorage.removeItem("price" + cartItems[i].itemNumber);
         })
 
 
@@ -328,3 +352,9 @@ function checkoutMechanic() {
                     span2.appendChild(value);
     }
 };
+
+window.addEventListener('load', function () {
+    if (!window.location.pathname.endsWith('checkout.html')) {  //so the add to cart function doesnt mess with the checkout mechanic
+        addToCart();
+    }
+});
