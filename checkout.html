@@ -1,74 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tobis Creative Factory</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/60d8198cd6.js" crossorigin="anonymous"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="page_icon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="page_icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="page_icon/favicon-16x16.png">
-    <link rel="manifest" href="page_icon/site.webmanifest">
-    <link rel="mask-icon" href="page_icon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#2a2a2a">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/60d8198cd6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="page_icon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="page_icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="page_icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="page_icon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="page_icon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#2a2a2a" />
     <script defer src="js/script.js"></script>
-</head>
-<body  onload = "checkoutMechanic()">
+  </head>
+  <body onload="checkoutMechanic()">
     <header>
-        <nav>
-            <div>
-                <a href="index.html" class="navLogo">
-                    <img src="images/logo/150ppi/Asset 2.png" alt="Tobis Logo">
-                </a>
-                <a href="artists.html" class="navLink">Artists</a>
-                <a href="tickets.html" class="navLink">Tickets</a>
-                <a href="about.html" class="navLink">About</a>
-                <a href="shop.html" class="navLink">Shop</a>
-            </div>
-        </nav>
-        <div class="headerMobile">
-            <button class="hamburguer">
-                <div class="bar"></div>
-            </button>
-            <a href="index.html" class="navLogo">
-                <img src="images/logo/150ppi/Asset 2.png" alt="Tobis Logo">
-            </a>
-            <a href=""></a>
+      <nav>
+        <div>
+          <a href="index.html" class="navLogo">
+            <img
+              src="https://personal-static-files-cdn.fra1.cdn.digitaloceanspaces.com/TOBIS/logo/150ppi/Asset%202.png"
+              alt="Tobis Logo"
+            />
+          </a>
+          <a href="artists.html" class="navLink">Artists</a>
+          <a href="tickets.html" class="navLink">Tickets</a>
+          <a href="about.html" class="navLink">About</a>
+          <a href="shop.html" class="navLink">Shop</a>
         </div>
-        <nav class="mobileNav">
-            <a style="display: none;"></a>
-            <a href="artists.html" class="navLink">Artists</a>
-            <a href="tickets.html" class="navLink">Tickets</a>
-            <a href="about.html" class="navLink">About</a>
-            <a href="shop.html" class="navLink">Shop</a>
-        </nav>
+      </nav>
+      <div class="headerMobile">
+        <button class="hamburguer">
+          <div class="bar"></div>
+        </button>
+        <a href="index.html" class="navLogo">
+          <img
+            src="https://personal-static-files-cdn.fra1.cdn.digitaloceanspaces.com/TOBIS/logo/150ppi/Asset%202.png"
+            alt="Tobis Logo"
+          />
+        </a>
+        <a href=""></a>
+      </div>
+      <nav class="mobileNav">
+        <a style="display: none"></a>
+        <a href="artists.html" class="navLink">Artists</a>
+        <a href="tickets.html" class="navLink">Tickets</a>
+        <a href="about.html" class="navLink">About</a>
+        <a href="shop.html" class="navLink">Shop</a>
+      </nav>
     </header>
     <main>
-        <section class="pageTitle">
-            <div class="rectangle red"></div>
-            <h1>Check out</h1>
-        </section>
-        <section class="checkoutWrapper" style="min-height: 45dvh;"></section>
-        <div class="checkoutPricing">
-            <div></div>
-            <span>
-                <p>Total:</p>
-                <p id="totalValue"></p>
-                <button>Check Out</button>
-            </span>
-        </div>
+      <section class="pageTitle">
+        <div class="rectangle red"></div>
+        <h1>Check out</h1>
+      </section>
+      <section class="checkoutWrapper" style="min-height: 45dvh"></section>
+      <div class="checkoutPricing">
+        <div></div>
+        <span>
+          <p>Total:</p>
+          <p id="totalValue"></p>
+          <button>Check Out</button>
+        </span>
+      </div>
     </main>
     <footer>
-        <a href="">Privacy Policy</a>
-        <div id="centeredLogo">
-            <img src="images/logo/150ppi/Asset 4.png" alt="Tobis Logo">
-        </div>
-        <a href="">Terms and Conditions</a>
+      <a href="">Privacy Policy</a>
+      <div id="centeredLogo">
+        <img
+          src="https://personal-static-files-cdn.fra1.cdn.digitaloceanspaces.com/TOBIS/logo/150ppi/Asset%204.png"
+          alt="Tobis Logo"
+        />
+      </div>
+      <a href="">Terms and Conditions</a>
     </footer>
-</body>
+  </body>
 </html>

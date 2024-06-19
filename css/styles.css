@@ -1,1546 +1,1537 @@
-:root {                      
-    --orange: #E2A041;
-    --red: #E24141;
-    --blue: #4E41E2;
-    --green: #7EE241;
-    --purple: #E241DC;
+:root {
+  --orange: #e2a041;
+  --red: #e24141;
+  --blue: #4e41e2;
+  --green: #7ee241;
+  --purple: #e241dc;
 }
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 body {
-    min-height: 100vh;
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-weight: 500;
+  min-height: 100vh;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 500;
 }
-nav div {                            /* nav side-bar */
-    position: fixed;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: top;
-    width: 300px;
-    height: 100vh;
-    padding: 50px 0;
-    z-index: 2;
-    background-color: white;
+nav div {
+  /* nav side-bar */
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  width: 300px;
+  height: 100vh;
+  padding: 50px 0;
+  z-index: 2;
+  background-color: white;
 }
 nav div a:last-child {
-    position: relative;
+  position: relative;
 }
 .cartCounter {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: -12px;
-    left: 22px;
-    height: 25px;
-    width: 25px;
-    background-color: #000;
-    border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -12px;
+  left: 22px;
+  height: 25px;
+  width: 25px;
+  background-color: #000;
+  border-radius: 50%;
 }
 .cartCounterNumber {
-    display: none;
-    color: white;
+  display: none;
+  color: white;
 }
 a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
 }
 a:visited {
-    color:inherit;
+  color: inherit;
 }
-
 
 .navLink {
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    border-bottom: 4px solid transparent; /* so items dont move on hover */
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  border-bottom: 4px solid transparent; /* so items dont move on hover */
 }
 .navLink:nth-child(2):hover {
-    border-bottom: 4px solid var(--orange);  /* underline on hover */
+  border-bottom: 4px solid var(--orange); /* underline on hover */
 }
 .navLink:nth-child(3):hover {
-    border-bottom: 4px solid var(--blue);
+  border-bottom: 4px solid var(--blue);
 }
 .navLink:nth-child(4):hover {
-    border-bottom: 4px solid var(--purple);
+  border-bottom: 4px solid var(--purple);
 }
 .navLink:nth-child(5):hover {
-    border-bottom: 4px solid var(--green);
+  border-bottom: 4px solid var(--green);
 }
 .navLogo {
-    margin-bottom: 40px; 
+  margin-bottom: 40px;
 }
 .navLogo img {
-    width: 200px;
-    height: auto;
+  width: 200px;
+  height: auto;
 }
 
-.headerMobile { 
-    display: none;
+.headerMobile {
+  display: none;
 }
 .headerMobile a:last-child {
-    position: relative;
+  position: relative;
 }
 .mobileNav a {
-    display: none;
+  display: none;
 }
 
+.hamburguer {
+  /* hamburguer menu */
+  display: block;
+  position: relative;
+  width: 35px;
+  cursor: pointer;
 
-.hamburguer {     /* hamburguer menu */
-    display: block;
-    position: relative;
-    width: 35px;
-    cursor: pointer;
-
-    appearance: none;
-    background: none;
-    outline: none;
-    border: none;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
 }
-.hamburguer .bar, .hamburguer::after, .hamburguer::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 5px;
-    background-color: #000;
-    margin: 6px 0px;
-    transition: 0.4s;
+.hamburguer .bar,
+.hamburguer::after,
+.hamburguer::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #000;
+  margin: 6px 0px;
+  transition: 0.4s;
 }
 .hamburguer.is-active::before {
-    transform: rotate(-45deg) translate(-8px, 6px);
+  transform: rotate(-45deg) translate(-8px, 6px);
 }
 .hamburguer.is-active::after {
-    transform: rotate(45deg) translate(-9px, -8px);
+  transform: rotate(45deg) translate(-9px, -8px);
 }
-.hamburguer.is-active .bar{
-    opacity: 0;
-}
-
-.blockGrid {         /* defines the grid that contains our navigation blocks */
-    width: calc(100% - 300px);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    margin: 80px 0px;
+.hamburguer.is-active .bar {
+  opacity: 0;
 }
 
-.block {                       /* landing page blocks */
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
+.blockGrid {
+  /* defines the grid that contains our navigation blocks */
+  width: calc(100% - 300px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin: 80px 0px;
+}
+
+.block {
+  /* landing page blocks */
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
 }
 .block:not(:last-child) {
-    margin-bottom: 80px;
+  margin-bottom: 80px;
 }
-.large {                        /* different sizes/settings blocks */
-    width: 1400px;
-    height: 500px;
+.large {
+  /* different sizes/settings blocks */
+  width: 1400px;
+  height: 500px;
 }
 .large:nth-child(1) {
-    background-image: url("../images/tobishallway.jpeg");
-    background-position: center;
-    background-size: cover;
+  background-image: url('https://personal-static-files-cdn.fra1.cdn.digitaloceanspaces.com/TOBIS/tobishallway.jpeg');
+  background-position: center;
+  background-size: cover;
 }
 .large:nth-child(4) {
-    background-image: url("../images/ticket.jpg");
-    background-position: center;
-    background-size: 90%;
-    background-color: rgb(45, 45, 47);
-    background-repeat: no-repeat;
-
+  background-image: url('https://personal-static-files-cdn.fra1.cdn.digitaloceanspaces.com/TOBIS/ticket.jpg');
+  background-position: center;
+  background-size: 90%;
+  background-color: rgb(45, 45, 47);
+  background-repeat: no-repeat;
 }
 .medium {
-    width: 800px;
-    height: 800px;
-    background-image: url("../images/girlBW.jpg");
-    background-position: top;
-    background-size: 100%;
-    cursor: pointer;
+  width: 800px;
+  height: 800px;
+  background-image: url('https://personal-static-files-cdn.fra1.cdn.digitaloceanspaces.com/TOBIS/girlBW.jpg');
+  background-position: top;
+  background-size: 100%;
+  cursor: pointer;
 }
 .small {
-    width: 500px;
-    height: 800px;
-    margin-left: 100px;
-    background-image: url("../images/calendario.jpg");
-    background-position: center;
-    background-size: cover;
+  width: 500px;
+  height: 800px;
+  margin-left: 100px;
+  background-image: url('https://personal-static-files-cdn.fra1.cdn.digitaloceanspaces.com/TOBIS/calendario.jpg');
+  background-position: center;
+  background-size: cover;
 }
-.rectangle {                 /* blocks decoration */
-    height: 100px;
-    width: 200px;
-    position: absolute;
-    left: calc(100% - 200px);
-    top: 100px;
-    transition: 0.5s;
+.rectangle {
+  /* blocks decoration */
+  height: 100px;
+  width: 200px;
+  position: absolute;
+  left: calc(100% - 200px);
+  top: 100px;
+  transition: 0.5s;
 }
 .semicircle {
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    position: absolute;
-    top: calc(50% - 200px); /* 440px(height+border*2) / 2 */
-    left: -220px;
-    transition: 0.5s;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 200px); /* 440px(height+border*2) / 2 */
+  left: -220px;
+  transition: 0.5s;
 }
 .medium .rectangle {
-    left: 0;
+  left: 0;
 }
 .medium .semicircle {
-    top: calc(100% - 200px);
-    left: calc(100% - 150px);
+  top: calc(100% - 200px);
+  left: calc(100% - 150px);
 }
 .small .semicircle {
-    top: calc(100% - 200px);
-    right: calc(100% - 150px);
+  top: calc(100% - 200px);
+  right: calc(100% - 150px);
 }
 .small .rectangle {
-    display: none;
+  display: none;
 }
 .large:nth-child(4) .rectangle {
-    left: 0;
-    top: 50px;
+  left: 0;
+  top: 50px;
 }
 .large:nth-child(4) .semicircle {
-    top: calc(100% - 200px);
-    left: calc(100% - 150px);
+  top: calc(100% - 200px);
+  left: calc(100% - 150px);
 }
-
 
 .orange {
-    background-color: var(--orange);
+  background-color: var(--orange);
 }
 .orangec {
-    border: 50px solid var(--orange);
+  border: 50px solid var(--orange);
 }
 .green {
-    background-color: var(--green);
+  background-color: var(--green);
 }
 .greenc {
-    border: 50px solid var(--green);
+  border: 50px solid var(--green);
 }
 .red {
-    background-color: var(--red);
+  background-color: var(--red);
 }
 .redc {
-    border: 50px solid var(--red);
+  border: 50px solid var(--red);
 }
 .white {
-    background-color: white;
+  background-color: white;
 }
 .whitec {
-    border: 50px solid white;
+  border: 50px solid white;
 }
 .blue {
-    background-color: var(--blue);
+  background-color: var(--blue);
 }
 .purple {
-    background-color: var(--purple);
+  background-color: var(--purple);
 }
 
-
-
-#year {                             /* info on blocks */
-    position: absolute;
-    font-size: 2rem;
-    top: calc(50% - 1rem);
-    left: 20px;
-    color: white;
+#year {
+  /* info on blocks */
+  position: absolute;
+  font-size: 2rem;
+  top: calc(50% - 1rem);
+  left: 20px;
+  color: white;
 }
 .intro {
-    position: absolute;
-    text-transform: uppercase;
-    color: white;
-    font-size: 2rem;
-    top: 70%;
-    left: 60%;
-    text-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  text-transform: uppercase;
+  color: white;
+  font-size: 2rem;
+  top: 70%;
+  left: 60%;
+  text-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
 }
 .event {
-    position: absolute;
-    text-transform: uppercase;
-    color: white;
-    font-size: 3.5rem;
-    top: 80%;
-    left: 60%;
-    text-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  text-transform: uppercase;
+  color: white;
+  font-size: 3.5rem;
+  top: 80%;
+  left: 60%;
+  text-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2);
 }
 .medium .intro {
-    left: 5%;
-    top: 80%;
+  left: 5%;
+  top: 80%;
 }
 .medium .event {
-    left: 5%;
-    top: 85%;
+  left: 5%;
+  top: 85%;
 }
 .small .intro {
-    left: 7%;
-    top: 5%;
+  left: 7%;
+  top: 5%;
 }
 .small .event {
-    left: 7%;
-    top: 10%;
+  left: 7%;
+  top: 10%;
 }
 .large:nth-child(4) .intro {
-    left: 5%;
-    top: 69%;
+  left: 5%;
+  top: 69%;
 }
 .large:nth-child(4) .event {
-    left: 5%;
-    top: 77%;
+  left: 5%;
+  top: 77%;
 }
 
-.overlayOrange {          /* color overlays */
-    width: 100%;
-    height: 100%;
-    background-color: var(--orange);
-    opacity: 0%;
-    transition: opacity 1s;
+.overlayOrange {
+  /* color overlays */
+  width: 100%;
+  height: 100%;
+  background-color: var(--orange);
+  opacity: 0%;
+  transition: opacity 1s;
 }
 .overlayGreen {
-    width: 100%;
-    height: 100%;
-    background-color: var(--green);
-    opacity: 0%;
-    transition: opacity 1s;
+  width: 100%;
+  height: 100%;
+  background-color: var(--green);
+  opacity: 0%;
+  transition: opacity 1s;
 }
 .overlayRed {
-    width: 100%;
-    height: 100%;
-    background-color: var(--red);
-    opacity: 0%;
-    transition: opacity 1s;
+  width: 100%;
+  height: 100%;
+  background-color: var(--red);
+  opacity: 0%;
+  transition: opacity 1s;
 }
 .overlayWhite {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    opacity: 0%;
-    transition: opacity 1s;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0%;
+  transition: opacity 1s;
 }
-
-
-
 
 footer {
-    height: 220px;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 3;
+  height: 220px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
 }
 footer img {
-    width: 150px;
-    height: auto;
+  width: 150px;
+  height: auto;
 }
 #centeredLogo {
-    width: 20%;
+  width: 20%;
 }
 #centeredLogo img {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 footer a {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 500;
-    width: 20%;
-    text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 20%;
+  text-align: center;
 }
 footer a:first-child {
-    text-align: end;
+  text-align: end;
 }
 footer a:last-child {
-    text-align: start;
+  text-align: start;
 }
 footer a:visited {
-    color: white;
+  color: white;
 }
 
-
-
-
-
-
-
-/* ARTISTS */ 
+/* ARTISTS */
 
 .pageTitle {
-    display: flex;
-    height: 100px;
-    align-items: center;
-    margin-top: 70px;
+  display: flex;
+  height: 100px;
+  align-items: center;
+  margin-top: 70px;
 }
 .pageTitle .rectangle {
-    position: static;
+  position: static;
 }
 .pageTitle h1 {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 4rem;
-    margin-left: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 4rem;
+  margin-left: 50px;
 }
 
 .artistsSection {
-    margin-left: 50px;
-    margin-top: 100px;
-    position: relative;
+  margin-left: 50px;
+  margin-top: 100px;
+  position: relative;
 }
 .artistsSection h2 {
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 2rem;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2rem;
 }
 .wrapper {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 .wrapper .photoGallery {
-    display: flex;
-    cursor: grab;
-    overflow: hidden;
-    width: calc(100vw - 50px - 300px);
-    position: relative;
+  display: flex;
+  cursor: grab;
+  overflow: hidden;
+  width: calc(100vw - 50px - 300px);
+  position: relative;
 }
 .photoGallery img {
-    height: 340px;
-    width: 340px;
-    object-fit: cover;
-    transition: opacity 0.5s;
-    position: relative;
+  height: 340px;
+  width: 340px;
+  object-fit: cover;
+  transition: opacity 0.5s;
+  position: relative;
 }
 .artistsSection i {
-    position:absolute ;
-    color: var(--orange);
-    top: 0;
-    left: calc(100% - 300px - 50px);
+  position: absolute;
+  color: var(--orange);
+  top: 0;
+  left: calc(100% - 300px - 50px);
 }
-.photoGallery .blockWrapper:not(:first-child)  {
-    margin-left: 100px;
+.photoGallery .blockWrapper:not(:first-child) {
+  margin-left: 100px;
 }
 .blockWrapper {
-    position: relative;
+  position: relative;
 }
 .blockOverlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    height: calc(100% - 5px);
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: calc(100% - 5px);
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 .oBlockText {
-    position: absolute;
-    color: white;
-    font-size: 2.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    z-index: 3;
-    text-align: center;
-    transition: opacity 0.5s;
+  position: absolute;
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 3;
+  text-align: center;
+  transition: opacity 0.5s;
 }
-
 
 /* Tickets */
 
-
 .ticketWrapper {
-    margin: 150px 0px 150px 100px;
-    display: flex;
+  margin: 150px 0px 150px 100px;
+  display: flex;
 }
 .ticketWrapper img {
-    object-fit: cover;
+  object-fit: cover;
 }
 .productTicket {
-    width: 450px;
-    height: 450px;
-    background-color: var(--blue);
+  width: 450px;
+  height: 450px;
+  background-color: var(--blue);
 }
 .ticketInformation {
-    margin-left: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .ticketInformation h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 .ticketInformation h3 {
-    font-size: 1.5rem;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    color: var(--blue);
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  color: var(--blue);
 }
 .ticketInfo {
-    font-size: 1.2rem;
-    width: calc(100% - 300px);
-    text-justify: distribute;
-    text-transform: none;
-    font-weight: 500;
+  font-size: 1.2rem;
+  width: calc(100% - 300px);
+  text-justify: distribute;
+  text-transform: none;
+  font-weight: 500;
 }
 .pricingTicket {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .pricingTicket p {
-    font-size: 2rem;
-    font-weight: 700;
+  font-size: 2rem;
+  font-weight: 700;
 }
 .pricingTicket div {
-    width: 4px;
-    height: 100%;
-    background-color: #000;
-    margin: 0 30px;
+  width: 4px;
+  height: 100%;
+  background-color: #000;
+  margin: 0 30px;
 }
 .pricingTicket button {
-    appearance: none;
-    border: none;
-    text-transform: uppercase;
-    padding: 20px 40px;
-    text-align: center;
-    background-color: var(--blue);
-    color: white;
-    cursor: pointer;
+  appearance: none;
+  border: none;
+  text-transform: uppercase;
+  padding: 20px 40px;
+  text-align: center;
+  background-color: var(--blue);
+  color: white;
+  cursor: pointer;
 }
 .pricingTicket button:hover {
-    background-color: #7166e7;
+  background-color: #7166e7;
 }
-
-
-
 
 /* SHOP */
 
 .shopWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 150px 0px 100px 100px;
-    width: calc(100% - 300px - 100px);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 150px 0px 100px 100px;
+  width: calc(100% - 300px - 100px);
 }
 .shopItem {
-    display: block;
-    width: 350px;
-    height: 350px;
-    background-color: #7EE241;
-    object-fit: cover;
-    position: relative;
+  display: block;
+  width: 350px;
+  height: 350px;
+  background-color: #7ee241;
+  object-fit: cover;
+  position: relative;
 }
 .blockOverlay2 {
-    display: flex;
-    align-items: end;
-    justify-content: start;
-    position: absolute;
-    height: calc(100%);
-    width: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.5s;
-    cursor: pointer;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+  position: absolute;
+  height: calc(100%);
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+  cursor: pointer;
 }
 .shopWrapper .blockWrapper {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
-.shopWrapper .blockWrapper  {
-    margin-left: 50px;
-    margin-right: 50px;
+.shopWrapper .blockWrapper {
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .itemPricing {
-    position: absolute;
-    color: white;
-    background-color: #000;
-    margin-bottom: 25px;
-    padding: 20px;
-    text-transform: uppercase;
-    z-index: 3;
-    text-align: left;
-    transition: opacity 0.5s;
+  position: absolute;
+  color: white;
+  background-color: #000;
+  margin-bottom: 25px;
+  padding: 20px;
+  text-transform: uppercase;
+  z-index: 3;
+  text-align: left;
+  transition: opacity 0.5s;
 }
 .itemPricing h4 {
-    font-size: 1.4rem;
-    font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 .itemPricing p {
-    font-weight: 500;
-    font-size: 1.1rem;
-    margin-top: 5px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-top: 5px;
 }
 .itemPopUp {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    height: 100dvh;
-    width: 99vw;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  width: 99vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99;
 }
 .visible {
-    display: flex;
+  display: flex;
 }
 .card {
-    width: 70vw;
-    height: 80vh;
-    background-color: white;
-    position: relative;
-    display: flex;
+  width: 70vw;
+  height: 80vh;
+  background-color: white;
+  position: relative;
+  display: flex;
 }
 .card .ticketInformation {
-    margin: 50px 50px;
+  margin: 50px 50px;
 }
 .card .ticketInformation .ticketInfo {
-    width: 95%;
+  width: 95%;
 }
 .card img {
-    display: block;
-    width: 50%;
-    height: 100%;
-    left: 0;
-    object-fit: cover;
+  display: block;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
 }
 
 /* ABOUT US */
 
 .photos {
-    display: flex;
-    justify-content: space-between;
-    width: 60vw;
-    flex-wrap: wrap;
-    margin: 100px 0 50px 100px;
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
+  flex-wrap: wrap;
+  margin: 100px 0 50px 100px;
 }
 .photos img {
-    object-fit: cover;
+  object-fit: cover;
 }
 .photos img:first-child {
-    width: 60vw;
-    height: 600px;
-    margin-bottom: 20px;
+  width: 60vw;
+  height: 600px;
+  margin-bottom: 20px;
 }
-.photos img:nth-child(2), .photos img:last-child {
-    width: calc(60vw/2 - 10px);
+.photos img:nth-child(2),
+.photos img:last-child {
+  width: calc(60vw / 2 - 10px);
 }
 .aboutText {
-    margin-left: 100px;
-    margin-bottom: 100px;
+  margin-left: 100px;
+  margin-bottom: 100px;
 }
 .aboutText h2 {
-    font-size: 2rem;
-    text-transform: uppercase;
-    font-size: 700;
-    margin-bottom: 30px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-size: 700;
+  margin-bottom: 30px;
 }
 .aboutText p {
-    font-size: 1.3rem;
-    width: 60vw;
-    margin-bottom: 20px;
-    text-align: justify;
-    text-justify: distribute;
-    font-weight: 500;
-    text-transform: none;
+  font-size: 1.3rem;
+  width: 60vw;
+  margin-bottom: 20px;
+  text-align: justify;
+  text-justify: distribute;
+  font-weight: 500;
+  text-transform: none;
 }
 .aboutText p:nth-child(4) {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 .socials {
-    margin-top: 70px;
+  margin-top: 70px;
 }
 .socials i {
-    cursor: pointer;
-    color: var(--purple);
+  cursor: pointer;
+  color: var(--purple);
 }
 .socials i:hover {
-    color: rgba(226, 65, 220, 0.7);
+  color: rgba(226, 65, 220, 0.7);
 }
 .socials i:not(:first-child) {
-    margin-left: 20px;
+  margin-left: 20px;
 }
-
 
 /* CHECKOUT */
 
 .checkoutWrapper {
-    margin: 150px 0px 100px 100px;
+  margin: 150px 0px 100px 100px;
 }
 .itemContainer {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 120px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 120px;
 }
 .itemContainer img {
-    width: 350px;
-    height: 250px;
-    object-fit: cover;
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
 }
 .checkoutInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 100px;
 }
-.checkoutInfo h2, h3, p {
-    text-transform: uppercase;
-    font-weight: 700;
+.checkoutInfo h2,
+h3,
+p {
+  text-transform: uppercase;
+  font-weight: 700;
 }
 .checkoutInfo h2 {
-    font-size: 2.2rem;
-    display: flex;
-    justify-content: space-between;
-    width: 40vw;
+  font-size: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 40vw;
 }
 .checkoutInfo h3 {
-    font-size: 1.3rem;
-    margin-top: 15px;
-    color: var(--red);
+  font-size: 1.3rem;
+  margin-top: 15px;
+  color: var(--red);
 }
 .checkoutInfo p {
-    font-size: 1.7rem;
+  font-size: 1.7rem;
 }
 .bottomInfo {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .checkoutInfo span:last-child span {
-    display: flex;
+  display: flex;
 }
 .checkoutInfo span:last-child span p:nth-child(2) {
-    margin-left: 25px;
-    cursor: pointer;
-    user-select: none;
+  margin-left: 25px;
+  cursor: pointer;
+  user-select: none;
 }
 .checkoutInfo span:last-child span p:nth-child(3) {
-    text-decoration: underline;
-    margin: 0 15px;
+  text-decoration: underline;
+  margin: 0 15px;
 }
 .checkoutInfo span:last-child span p:nth-child(4) {
-    cursor: pointer;
-    user-select: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 .checkoutPricing {
-    display: none;
-    width: calc(100% - 300px);
-    margin-bottom: 100px;
+  display: none;
+  width: calc(100% - 300px);
+  margin-bottom: 100px;
 }
 .checkoutPricing div {
-    height: 5px;
-    width: 100%;
-    background-color: #000;
-    opacity: 20%;
+  height: 5px;
+  width: 100%;
+  background-color: #000;
+  opacity: 20%;
 }
 .checkoutPricing span {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 50px;
 }
 .checkoutPricing span p {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-right: 50px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 50px;
 }
 .checkoutPricing button {
-    appearance: none;
-    border: none;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 15px 25px;
-    background-color: var(--red);
-    cursor: pointer;
+  appearance: none;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 15px 25px;
+  background-color: var(--red);
+  cursor: pointer;
 }
 
-.itemDelete { /* asasas */
-    display: block;
-    font-size: 1.6rem;
-    opacity: 70%;
-    cursor: pointer;
+.itemDelete {
+  /* asasas */
+  display: block;
+  font-size: 1.6rem;
+  opacity: 70%;
+  cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 @media (hover: hover) {
-    .large:hover > .rectangle {   /* hover effects */
-        height: 110px;
-        width: 240px;
-        left: calc(100% - 225px);
-        top: 90px;
-    }
-    .large:hover > .semicircle {
-        top: calc(50% - 210px);
-    }
-    .large:hover > .orangec {
-        border: 60px solid var(--orange);
-    }
-    .large:hover > .overlayOrange {
-        opacity: 15%;
-    }
-    .medium:hover > .overlayGreen {
-        opacity: 15%;
-    }
-    .medium:hover > .rectangle {
-        height: 110px;
-        width: 240px;
-        top: 90px;
-    }
-    .medium:hover > .greenc {
-        border: 60px solid var(--green);
-    }
-    .medium:hover > .semicircle {
-        top: calc(100% - 210px);
-        left: calc(100% - 160px);
-    }
-    .small:hover > .redc {
-        border: 60px solid var(--red);
-    }
-    .small:hover > .overlayRed {
-        opacity: 10%;
-    }
-    .large:nth-child(4):hover > .whitec {
-        border: 60px solid white;
-    }
-    .large:nth-child(4):hover > .rectangle {
-        height: 110px;
-        width: 240px;
-        left: 0;
-        top: 45px;
-    }
-    .large:nth-child(4):hover > .semicircle {
-        top: calc(100% - 210px);
-        left: calc(100% - 160px);
-    }
-    .large:nth-child(4):hover > .overlayWhite {
-        opacity: 15%;
-    }
+  .large:hover > .rectangle {
+    /* hover effects */
+    height: 110px;
+    width: 240px;
+    left: calc(100% - 225px);
+    top: 90px;
+  }
+  .large:hover > .semicircle {
+    top: calc(50% - 210px);
+  }
+  .large:hover > .orangec {
+    border: 60px solid var(--orange);
+  }
+  .large:hover > .overlayOrange {
+    opacity: 15%;
+  }
+  .medium:hover > .overlayGreen {
+    opacity: 15%;
+  }
+  .medium:hover > .rectangle {
+    height: 110px;
+    width: 240px;
+    top: 90px;
+  }
+  .medium:hover > .greenc {
+    border: 60px solid var(--green);
+  }
+  .medium:hover > .semicircle {
+    top: calc(100% - 210px);
+    left: calc(100% - 160px);
+  }
+  .small:hover > .redc {
+    border: 60px solid var(--red);
+  }
+  .small:hover > .overlayRed {
+    opacity: 10%;
+  }
+  .large:nth-child(4):hover > .whitec {
+    border: 60px solid white;
+  }
+  .large:nth-child(4):hover > .rectangle {
+    height: 110px;
+    width: 240px;
+    left: 0;
+    top: 45px;
+  }
+  .large:nth-child(4):hover > .semicircle {
+    top: calc(100% - 210px);
+    left: calc(100% - 160px);
+  }
+  .large:nth-child(4):hover > .overlayWhite {
+    opacity: 15%;
+  }
 }
-
-
-
-
 
 @media screen and (min-width: 2200px) {
-    .large {
-        width: 1800px;
-    }
-    .medium {
-        width: 1000px;
-    }
-    .small {
-        width: 700px;
-    }
-    .ticketInfo {
-        font-size: 1.4rem;
-        width: 750px;
-    }
-    .artistsSection i {
-        display: none;
-    }
+  .large {
+    width: 1800px;
+  }
+  .medium {
+    width: 1000px;
+  }
+  .small {
+    width: 700px;
+  }
+  .ticketInfo {
+    font-size: 1.4rem;
+    width: 750px;
+  }
+  .artistsSection i {
+    display: none;
+  }
 }
-
 
 @media screen and (max-width: 1920px) {
-    .large {
-        width: 1200px;
-    }
-    .large .event {
-        left: 55%;
-    }.large .intro {
-        left: 55%;
-    }
-    .medium {
-        width: 700px;
-        background-size: cover;
-    }
-    .small {
-        width: 400px;
-    }
+  .large {
+    width: 1200px;
+  }
+  .large .event {
+    left: 55%;
+  }
+  .large .intro {
+    left: 55%;
+  }
+  .medium {
+    width: 700px;
+    background-size: cover;
+  }
+  .small {
+    width: 400px;
+  }
 
-    /* SHOP */ 
+  /* SHOP */
 
-    .shopItem {
-        width: 260px;
-        height: 260px;
-    }
+  .shopItem {
+    width: 260px;
+    height: 260px;
+  }
 }
 
-
 @media screen and (max-width: 1550px) {
-    .large {
-        width: 950px;
-    }
-    .large .event {
-        left: 40%;
-    }.large .intro {
-        left: 40%;
-    }
-    .medium {
-        width: 950px;
-        height: 500px;
-        background-position: center;
-    }
-    .medium .intro {
-        top: 70%;
-    }
-    .medium .event {
-        top: 80%;
-    }
-    .small {
-        width: 950px;
-        height: 500px;
-        margin: 0;
-        background-size: 210%;
-        background-position: 100% 30%;
-    }
-    .small .intro {
-        top: 70%;
-        left: 60%;
-    }
-    .small .event {
-        top: 80%;
-        left: 60%;
-    }
-    .large:nth-child(4) {
-        background-size: 110%;
-    }
-    .large:nth-child(4) .intro {
-        left: 5%;
-        top: 70%;
-    }
-    .large:nth-child(4) .event {
-        left: 5%;
-        top: 80%;
-    }
-    .red {
-        display: block;
-    }
+  .large {
+    width: 950px;
+  }
+  .large .event {
+    left: 40%;
+  }
+  .large .intro {
+    left: 40%;
+  }
+  .medium {
+    width: 950px;
+    height: 500px;
+    background-position: center;
+  }
+  .medium .intro {
+    top: 70%;
+  }
+  .medium .event {
+    top: 80%;
+  }
+  .small {
+    width: 950px;
+    height: 500px;
+    margin: 0;
+    background-size: 210%;
+    background-position: 100% 30%;
+  }
+  .small .intro {
+    top: 70%;
+    left: 60%;
+  }
+  .small .event {
+    top: 80%;
+    left: 60%;
+  }
+  .large:nth-child(4) {
+    background-size: 110%;
+  }
+  .large:nth-child(4) .intro {
+    left: 5%;
+    top: 70%;
+  }
+  .large:nth-child(4) .event {
+    left: 5%;
+    top: 80%;
+  }
+  .red {
+    display: block;
+  }
 
-    /* ARTISTS */
+  /* ARTISTS */
 
-    .pageTitle .rectangle {
-        width: 150px;
-    }
-    .pageTitle h1 {
-        font-size: 3rem;
-    }
-    .artistsSection h2 {
-        font-size: 1.7rem;
-    }    
-    .photoGallery img {
-        height: 240px;
-        width: 240px;
-    }
-    .oBlockText {
-        font-size: 1.5rem;
-    }
+  .pageTitle .rectangle {
+    width: 150px;
+  }
+  .pageTitle h1 {
+    font-size: 3rem;
+  }
+  .artistsSection h2 {
+    font-size: 1.7rem;
+  }
+  .photoGallery img {
+    height: 240px;
+    width: 240px;
+  }
+  .oBlockText {
+    font-size: 1.5rem;
+  }
 
-    /* TICKETS */
+  /* TICKETS */
 
-    .productTicket {
-        width: 400px;
-        height: 400px;
-    }
-    .ticketInformation h1 {
-        font-size: 2.3rem;
-    }
-    .ticketInformation h3 {
-        font-size: 1.2rem;
-    }
-    .pricingTicket p {
-        font-size: 1.7rem;
-    }
-    .pricingTicket div {
-        width: 3px;
-    }
-    .pricingTicket button {
-        padding: 20px 40px;
-    }
+  .productTicket {
+    width: 400px;
+    height: 400px;
+  }
+  .ticketInformation h1 {
+    font-size: 2.3rem;
+  }
+  .ticketInformation h3 {
+    font-size: 1.2rem;
+  }
+  .pricingTicket p {
+    font-size: 1.7rem;
+  }
+  .pricingTicket div {
+    width: 3px;
+  }
+  .pricingTicket button {
+    padding: 20px 40px;
+  }
 
-    /* SHOP */
+  /* SHOP */
 
-    .shopItem {
-        width: 200px;
-        height: 200px;
-    }
-    .shopWrapper .blockWrapper  {
-        margin-left: 25px;
-        margin-right: 25px;
-    }
-    .shopWrapper .blockWrapper {
-        margin-bottom: 70px;
-    }
-    .itemPricing {
-        margin-bottom: 20px;
-        padding: 15px;
-    }
-    .itemPricing h4 {
-        font-size: 1.2rem;
-    }
-    .itemPricing p {
-        font-size: 0.9rem;
-        margin-top: 5px;
-    }
+  .shopItem {
+    width: 200px;
+    height: 200px;
+  }
+  .shopWrapper .blockWrapper {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .shopWrapper .blockWrapper {
+    margin-bottom: 70px;
+  }
+  .itemPricing {
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+  .itemPricing h4 {
+    font-size: 1.2rem;
+  }
+  .itemPricing p {
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
 
-    /* CHECKOUT */  
+  /* CHECKOUT */
 
-    .checkoutWrapper {
-        margin: 100px 0px 100px 70px;
-    }
-    .itemContainer img {
-        width: 250px;
-        height: 200px;
-    }
-    .checkoutInfo h2 {
-        font-size: 1.8rem;
-    }
-    .checkoutInfo h3 {
-        font-size: 0.9rem;
-    }
-    .checkoutInfo p {
-        font-size: 1.6rem;
-    }
-    .bottomInfo, .checkoutInfo h2 {
-        width: 35vw;
-    }
-    .checkoutPricing span p {
-        font-size: 1.9rem;
-    }
-    .checkoutPricing button {
-        font-size: 0.9rem;
-    }
-    .itemDelete {
-        font-size: 1.2rem;
-    }
+  .checkoutWrapper {
+    margin: 100px 0px 100px 70px;
+  }
+  .itemContainer img {
+    width: 250px;
+    height: 200px;
+  }
+  .checkoutInfo h2 {
+    font-size: 1.8rem;
+  }
+  .checkoutInfo h3 {
+    font-size: 0.9rem;
+  }
+  .checkoutInfo p {
+    font-size: 1.6rem;
+  }
+  .bottomInfo,
+  .checkoutInfo h2 {
+    width: 35vw;
+  }
+  .checkoutPricing span p {
+    font-size: 1.9rem;
+  }
+  .checkoutPricing button {
+    font-size: 0.9rem;
+  }
+  .itemDelete {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 1150px) {
-    nav div {
-        display: none;
-    }
-    .headerMobile {
-        height: 100px;
-        width: 100vw;
-        top: 0;
-        left: 0;
-        background-color: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        position: fixed;
-        z-index: 99;
-    }
-    .navLogo {
-        margin-bottom: 0px; 
-    }
-    .navLogo img {
-        width: 150px;
-    }
-    .mobileNav {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: -50%;
-        width: 30%;
-        min-height: 100vh;
-        z-index: 5;
-        background-color: white;
-        padding-top: 120px;
-        transition: 0.4s;
-    }
-    .mobileNav.is-active {
-        left: 0;
-    }
-    .mobileNav a {
-        display: block;
-        text-align: center;
-        margin: 55px 0px;
-        padding: 12px 16px;
-    }
-    .blockGrid {
-        width: 100%;
-    }
-    .large, .medium, .small {
-        width: 80vw;
-    }
-    .intro {
-        font-size: 1.7rem;
-    }
-    .event {
-        font-size: 2.5rem;
-    }
-    .semicircle {
-        display: none;
-    }
-    .small .rectangle {
-        display: block;
-    }
-    .intro, .event {
-        left: 10% !important;
-    }
-    .rectangle {
-        height: 70px;
-        width: 160px;
-    }
-    #year {
-        display: none;
-    }
-    .overlayGreen, .overlayOrange, .overlayRed, .overlayWhite {
-        opacity: 15%;
-    }
-    .large:nth-child(1) .rectangle {
-        left: calc(100% - 160px) !important;
-    }
-    .small .rectangle {
-        left: calc(100% - 160px) !important;
-    }
-    .small {
-        background-position: 10% 30%;
-    }
+  nav div {
+    display: none;
+  }
+  .headerMobile {
+    height: 100px;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    z-index: 99;
+  }
+  .navLogo {
+    margin-bottom: 0px;
+  }
+  .navLogo img {
+    width: 150px;
+  }
+  .mobileNav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -50%;
+    width: 30%;
+    min-height: 100vh;
+    z-index: 5;
+    background-color: white;
+    padding-top: 120px;
+    transition: 0.4s;
+  }
+  .mobileNav.is-active {
+    left: 0;
+  }
+  .mobileNav a {
+    display: block;
+    text-align: center;
+    margin: 55px 0px;
+    padding: 12px 16px;
+  }
+  .blockGrid {
+    width: 100%;
+  }
+  .large,
+  .medium,
+  .small {
+    width: 80vw;
+  }
+  .intro {
+    font-size: 1.7rem;
+  }
+  .event {
+    font-size: 2.5rem;
+  }
+  .semicircle {
+    display: none;
+  }
+  .small .rectangle {
+    display: block;
+  }
+  .intro,
+  .event {
+    left: 10% !important;
+  }
+  .rectangle {
+    height: 70px;
+    width: 160px;
+  }
+  #year {
+    display: none;
+  }
+  .overlayGreen,
+  .overlayOrange,
+  .overlayRed,
+  .overlayWhite {
+    opacity: 15%;
+  }
+  .large:nth-child(1) .rectangle {
+    left: calc(100% - 160px) !important;
+  }
+  .small .rectangle {
+    left: calc(100% - 160px) !important;
+  }
+  .small {
+    background-position: 10% 30%;
+  }
 
-    /* Artists */ 
+  /* Artists */
 
-    .pageTitle {
-        margin-top: 150px;
-    }
-    .wrapper .photoGallery {
-        width: calc(100vw - 100px);
-    }
-    .artistsSection i {
-        position:absolute ;
-        color: var(--orange);
-        top: 0;
-        left: calc(100% - 50px);
-    }
-    /* Tickets */
+  .pageTitle {
+    margin-top: 150px;
+  }
+  .wrapper .photoGallery {
+    width: calc(100vw - 100px);
+  }
+  .artistsSection i {
+    position: absolute;
+    color: var(--orange);
+    top: 0;
+    left: calc(100% - 50px);
+  }
+  /* Tickets */
 
-    .ticketWrapper {
-        margin: 100px 100px 0px;
-        display: block;
-    }
-    .ticketWrapper:last-child {
-        margin-bottom: 100px;
-    }
-    .productTicket {
-        width: 100%;
-        height: 400px;
-    }
-    .ticketInformation {
-        margin-left: 0;
-        margin-top: 30px;
-    }
-    .ticketInformation .ticketInfo {
-        width: 100%;
-        margin-bottom: 70px;
-    }
-    .pricingTicket div {
-        height: 55px;
-    }
+  .ticketWrapper {
+    margin: 100px 100px 0px;
+    display: block;
+  }
+  .ticketWrapper:last-child {
+    margin-bottom: 100px;
+  }
+  .productTicket {
+    width: 100%;
+    height: 400px;
+  }
+  .ticketInformation {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+  .ticketInformation .ticketInfo {
+    width: 100%;
+    margin-bottom: 70px;
+  }
+  .pricingTicket div {
+    height: 55px;
+  }
 
-    /* Shop */ 
+  /* Shop */
 
-    .shopWrapper {
-        margin: 100px 35px 50px;
-        width: calc(100% - 70px);
-    }
-    .shopWrapper .blockWrapper  {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-    .shopItem {
-        width: 300px;
-        height: 300px;
-    }
-    .itemPricing h4 {
-        font-size: 1.2rem;
-    }
-    .itemPricing p {
-        font-size: 0.9rem;
-        margin-top: 5px;
-    }
-    .itemPricing {
-        margin-bottom: 15px;
-        padding: 10px;
-    }
-    .itemPricing h4 {
-        font-size: 1rem;
-    }
-    .itemPricing p {
-        font-size: 0.7rem;
-        margin-top: 5px;
-    }
-    .card {
-        width: 80vw;
-        height: 90dvh;
-        flex-direction: column;
-    }
-    .card .ticketInformation {
-        margin: 35px 40px;
-    }
-    .card .ticketInformation h3 {
-        margin-top: 10px;
-        margin-bottom: 40px;
-    }
-    .card .ticketInformation .ticketInfo {
-        width: 100%;
-        margin-bottom: 10dvh;
-        overflow-y: scroll;
-        height: 150px;
-    }
-    .card img {
-        display: block;
-        width: 100%;
-        height: 50%;
-        left: 0;
-        object-fit: cover;
-    }
-    .blockOverlay2, .itemPricing {
-        opacity: 100%;
-        z-index: 1;
-    }
+  .shopWrapper {
+    margin: 100px 35px 50px;
+    width: calc(100% - 70px);
+  }
+  .shopWrapper .blockWrapper {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .shopItem {
+    width: 300px;
+    height: 300px;
+  }
+  .itemPricing h4 {
+    font-size: 1.2rem;
+  }
+  .itemPricing p {
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  .itemPricing {
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+  .itemPricing h4 {
+    font-size: 1rem;
+  }
+  .itemPricing p {
+    font-size: 0.7rem;
+    margin-top: 5px;
+  }
+  .card {
+    width: 80vw;
+    height: 90dvh;
+    flex-direction: column;
+  }
+  .card .ticketInformation {
+    margin: 35px 40px;
+  }
+  .card .ticketInformation h3 {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+  .card .ticketInformation .ticketInfo {
+    width: 100%;
+    margin-bottom: 10dvh;
+    overflow-y: scroll;
+    height: 150px;
+  }
+  .card img {
+    display: block;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    object-fit: cover;
+  }
+  .blockOverlay2,
+  .itemPricing {
+    opacity: 100%;
+    z-index: 1;
+  }
 
-    /* About Us */
+  /* About Us */
 
-    .photos {
-        width: 80vw;
-        margin-left: 10vw;
-        margin-right: 10vw;
-    }
-    .photos img:first-child {
-        width: 80vw;
-        height: 400px;
-    }
-    .photos img:nth-child(2), .photos img:last-child {
-        width: calc(80vw/2 - 10px);
-    }
-    .aboutText {
-        margin-left: 10vw;
-    }
-    .aboutText p {
-        width: 80vw;
-        font-size: 1.1rem;
-    }
-    .aboutText h2 {
-        font-size: 1.8rem;
-    }
+  .photos {
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  .photos img:first-child {
+    width: 80vw;
+    height: 400px;
+  }
+  .photos img:nth-child(2),
+  .photos img:last-child {
+    width: calc(80vw / 2 - 10px);
+  }
+  .aboutText {
+    margin-left: 10vw;
+  }
+  .aboutText p {
+    width: 80vw;
+    font-size: 1.1rem;
+  }
+  .aboutText h2 {
+    font-size: 1.8rem;
+  }
 
-    /* CHECKOUT */  
+  /* CHECKOUT */
 
-    .checkoutWrapper {
-        margin-left: 0;
-    }
-    .itemContainer {
-        justify-content: center;
-    }
-    .itemContainer img {
-        width: 200px;
-        height: 200px;
-    }
-    .checkoutInfo {
-        margin-left: 70px;
-    }
-    .checkoutInfo h2 {
-        font-size: 1.6rem;
-    }
-    .checkoutInfo h3 {
-        font-size: 0.9rem;
-    }
-    .checkoutInfo p {
-        font-size: 1.4rem;
-    }
-    .checkoutPricing {
-        width: calc(95%);
-    }
-    .checkoutPricing span p {
-        font-size: 1.7rem;
-    }
-    .checkoutPricing button {
-        font-size: 0.7rem;
-    }
-    .bottomInfo, .checkoutInfo h2 {
-        width: 45vw;
-    }
-    .itemDelete {
-        font-size: 1.3rem;
-    }
-    
+  .checkoutWrapper {
+    margin-left: 0;
+  }
+  .itemContainer {
+    justify-content: center;
+  }
+  .itemContainer img {
+    width: 200px;
+    height: 200px;
+  }
+  .checkoutInfo {
+    margin-left: 70px;
+  }
+  .checkoutInfo h2 {
+    font-size: 1.6rem;
+  }
+  .checkoutInfo h3 {
+    font-size: 0.9rem;
+  }
+  .checkoutInfo p {
+    font-size: 1.4rem;
+  }
+  .checkoutPricing {
+    width: calc(95%);
+  }
+  .checkoutPricing span p {
+    font-size: 1.7rem;
+  }
+  .checkoutPricing button {
+    font-size: 0.7rem;
+  }
+  .bottomInfo,
+  .checkoutInfo h2 {
+    width: 45vw;
+  }
+  .itemDelete {
+    font-size: 1.3rem;
+  }
 }
 @media screen and (max-width: 750px) {
-    #centeredLogo {
-        width: 25%;
-    }
-    .hamburguer .bar, .hamburguer::after, .hamburguer::before {
-        height: 3px;
-    }
-    .hamburguer.is-active::before {
-        transform: rotate(-45deg) translate(-4px, 4px);
-    }
-    .hamburguer.is-active::after {
-        transform: rotate(45deg) translate(-8px, -9px);
-    }
-    .headerMobile a:last-child i {
-        font-size: 1.6rem;
-    }
-    .large:nth-child(4) {
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-size: 200%;
-        background-color: rgb(45, 45, 47);
-    }
-    .intro {
-        font-size: 1.3rem;
-        top: 77% !important;
-    }
-    .event {
-        font-size: 1.8rem;
-        top: 85% !important;
-    }
-    footer {
-        height: 120px;
-        justify-content: space-around;
-    }
-    footer a {
-        font-size: 1rem;
-        text-align: center !important;
-    }
-    footer img {
-        width: 90px;
-        height: auto;
-    }
-    .rectangle {
-        top: 10%;
-    }
-    .mobileNav {
-        width: 50%;
-    }
+  #centeredLogo {
+    width: 25%;
+  }
+  .hamburguer .bar,
+  .hamburguer::after,
+  .hamburguer::before {
+    height: 3px;
+  }
+  .hamburguer.is-active::before {
+    transform: rotate(-45deg) translate(-4px, 4px);
+  }
+  .hamburguer.is-active::after {
+    transform: rotate(45deg) translate(-8px, -9px);
+  }
+  .headerMobile a:last-child i {
+    font-size: 1.6rem;
+  }
+  .large:nth-child(4) {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-color: rgb(45, 45, 47);
+  }
+  .intro {
+    font-size: 1.3rem;
+    top: 77% !important;
+  }
+  .event {
+    font-size: 1.8rem;
+    top: 85% !important;
+  }
+  footer {
+    height: 120px;
+    justify-content: space-around;
+  }
+  footer a {
+    font-size: 1rem;
+    text-align: center !important;
+  }
+  footer img {
+    width: 90px;
+    height: auto;
+  }
+  .rectangle {
+    top: 10%;
+  }
+  .mobileNav {
+    width: 50%;
+  }
 
-     /* Artists */ 
+  /* Artists */
 
-     .pageTitle .rectangle {
-        width: 50px;
-    }
-    .pageTitle h1 {
-        font-size: 1.9rem;
-        margin-left: 30px;
-    }
-    .artistsSection {
-        margin-top: 70px;
-    }
-    .wrapper {
-        margin-bottom: 70px;
-    }
-    .photoGallery img {
-        height: 170px;
-        width: 170px;
-    }
-    .photoGallery .blockWrapper:not(:first-child)  {
-        margin-left: 50px;
-    }
-    .artistsSection h2 {
-        font-size: 1.3rem;
-    }
-    .artistsSection i {
-        font-size: 1.5rem;
-        left: calc(100% - 75px);
-    }
+  .pageTitle .rectangle {
+    width: 50px;
+  }
+  .pageTitle h1 {
+    font-size: 1.9rem;
+    margin-left: 30px;
+  }
+  .artistsSection {
+    margin-top: 70px;
+  }
+  .wrapper {
+    margin-bottom: 70px;
+  }
+  .photoGallery img {
+    height: 170px;
+    width: 170px;
+  }
+  .photoGallery .blockWrapper:not(:first-child) {
+    margin-left: 50px;
+  }
+  .artistsSection h2 {
+    font-size: 1.3rem;
+  }
+  .artistsSection i {
+    font-size: 1.5rem;
+    left: calc(100% - 75px);
+  }
 
-    /* Tickets */ 
+  /* Tickets */
 
-    .ticketWrapper {
-        margin: 50px 50px 130px;
-    }
-    .productTicket {
-        height: 200px;
-    }
-    .ticketInformation h1 {
-        font-size: 1.5rem;
-    }
-    .ticketInformation h3 {
-        font-size: 1rem;
-    }
-    .ticketInfo {
-        font-size: 1.1rem;
-        text-justify: auto;
-    }
-    .ticketInformation .ticketInfo {
-        margin-bottom: 50px;
-    }
-    .pricingTicket p {
-        font-size: 1.5rem;
-    }
-    .pricingTicket:last-child p:first-child {
-        font-size: 1.3rem;
-    }
-    .pricingTicket div {
-        height: 40px;
-    }
-    .pricingTicket button {
-        font-size: 0.8rem;
-        padding: 15px 30px;
-    }
+  .ticketWrapper {
+    margin: 50px 50px 130px;
+  }
+  .productTicket {
+    height: 200px;
+  }
+  .ticketInformation h1 {
+    font-size: 1.5rem;
+  }
+  .ticketInformation h3 {
+    font-size: 1rem;
+  }
+  .ticketInfo {
+    font-size: 1.1rem;
+    text-justify: auto;
+  }
+  .ticketInformation .ticketInfo {
+    margin-bottom: 50px;
+  }
+  .pricingTicket p {
+    font-size: 1.5rem;
+  }
+  .pricingTicket:last-child p:first-child {
+    font-size: 1.3rem;
+  }
+  .pricingTicket div {
+    height: 40px;
+  }
+  .pricingTicket button {
+    font-size: 0.8rem;
+    padding: 15px 30px;
+  }
 
-    /* Shop */ 
+  /* Shop */
 
-    .shopWrapper {
-        margin: 50px 13px 50px;
-        width: calc(100% - 26px);
-        justify-content: center;
-    }
-    .shopWrapper .blockWrapper  {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-    .shopWrapper .blockWrapper {
-        margin-bottom: 50px;
-    }
-    .itemPricing h4 {
-        font-size: 10rem;
-    }
-    .itemPricing p {
-        font-size: 0.7rem;
-        margin-top: 5px;
-    }
-    .itemPricing {
-        margin-bottom: 10px;
-        padding: 15px;
-        min-width: 100px;
-    }
-    .itemPricing h4 {
-        font-size: 1.2rem;
-    }
-    .itemPricing p {
-        font-size: 1.1rem;
-        margin-top: 5px;
-    }
-    .card .ticketInformation .ticketInfo {
-        width: 100%;
-        margin-bottom: 20%;
-        overflow-y: scroll;
-        height: 100px;
-    }
-    .card .pricingTicket div {
-        margin: 0px 25px;
-        width: 2px;
-    }
-    .card .pricingTicket button {
-        font-size: 0.8rem;
-    }
-    .card img {
-        height: 35%;
-    }
+  .shopWrapper {
+    margin: 50px 13px 50px;
+    width: calc(100% - 26px);
+    justify-content: center;
+  }
+  .shopWrapper .blockWrapper {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .shopWrapper .blockWrapper {
+    margin-bottom: 50px;
+  }
+  .itemPricing h4 {
+    font-size: 10rem;
+  }
+  .itemPricing p {
+    font-size: 0.7rem;
+    margin-top: 5px;
+  }
+  .itemPricing {
+    margin-bottom: 10px;
+    padding: 15px;
+    min-width: 100px;
+  }
+  .itemPricing h4 {
+    font-size: 1.2rem;
+  }
+  .itemPricing p {
+    font-size: 1.1rem;
+    margin-top: 5px;
+  }
+  .card .ticketInformation .ticketInfo {
+    width: 100%;
+    margin-bottom: 20%;
+    overflow-y: scroll;
+    height: 100px;
+  }
+  .card .pricingTicket div {
+    margin: 0px 25px;
+    width: 2px;
+  }
+  .card .pricingTicket button {
+    font-size: 0.8rem;
+  }
+  .card img {
+    height: 35%;
+  }
 
-    /* About Us */
+  /* About Us */
 
-    .photos {
-        margin-top: 50px;
-    }
-    .photos img:first-child {
-        height: 300px;
-    }
-    .socials {
-        width: 80vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .socials i {
-        font-size: 2rem;
-    }
-    .aboutText p {
-        font-size: 1rem;
-    }
-    .aboutText h2 {
-        font-size: 1.5rem;
-        width: 80vw;
-        text-align: center;
-    }
-    .socials i:not(:first-child) {
-        margin-left: 35px;
-    }
+  .photos {
+    margin-top: 50px;
+  }
+  .photos img:first-child {
+    height: 300px;
+  }
+  .socials {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .socials i {
+    font-size: 2rem;
+  }
+  .aboutText p {
+    font-size: 1rem;
+  }
+  .aboutText h2 {
+    font-size: 1.5rem;
+    width: 80vw;
+    text-align: center;
+  }
+  .socials i:not(:first-child) {
+    margin-left: 35px;
+  }
 
-    /* CHECKOUT */  
+  /* CHECKOUT */
 
-    .checkoutWrapper {
-        margin: 50px 0px 100px 0px;
-    }
-    .itemContainer {
-        margin-bottom: 50px;
-    }
-    .itemContainer img {
-        width: 100px;
-        height: 100px;
-    }
-    .checkoutInfo {
-        margin-left: 30px;
-    }
-    .checkoutInfo h2 {
-        font-size: 1rem;
-    }
-    .checkoutInfo h3 {
-        font-size: 0.7rem;
-        margin-top: 10px;
-    }
-    .checkoutInfo p {
-        font-size: 0.8rem;
-    }
-    .bottomInfo, .checkoutInfo h2 {
-        width: 45vw;
-    }
-    .checkoutPricing {
-        width: calc(95%);
-    }
-    .checkoutInfo span:last-child span p:nth-child(2) {
-        margin-left: 7px;
-    }
-    .checkoutInfo span:last-child span p:nth-child(3) {
-        margin: 0 5px;
-    }
-    .checkoutPricing span p {
-        font-size: 1.3rem;
-        margin-right: 40px;
-    }
-    .checkoutPricing button {
-        font-size: 0.5rem;
-    }
-    .mobile {
-        display: none;
-    }
-    .itemDelete {
-        font-size: 0.8rem;
-    }
-    .cartCounter {
-        height: 20px;
-        width: 20px;
-    }
-    .cartCounterNumber {
-        font-size: 0.8rem;
-    }
+  .checkoutWrapper {
+    margin: 50px 0px 100px 0px;
+  }
+  .itemContainer {
+    margin-bottom: 50px;
+  }
+  .itemContainer img {
+    width: 100px;
+    height: 100px;
+  }
+  .checkoutInfo {
+    margin-left: 30px;
+  }
+  .checkoutInfo h2 {
+    font-size: 1rem;
+  }
+  .checkoutInfo h3 {
+    font-size: 0.7rem;
+    margin-top: 10px;
+  }
+  .checkoutInfo p {
+    font-size: 0.8rem;
+  }
+  .bottomInfo,
+  .checkoutInfo h2 {
+    width: 45vw;
+  }
+  .checkoutPricing {
+    width: calc(95%);
+  }
+  .checkoutInfo span:last-child span p:nth-child(2) {
+    margin-left: 7px;
+  }
+  .checkoutInfo span:last-child span p:nth-child(3) {
+    margin: 0 5px;
+  }
+  .checkoutPricing span p {
+    font-size: 1.3rem;
+    margin-right: 40px;
+  }
+  .checkoutPricing button {
+    font-size: 0.5rem;
+  }
+  .mobile {
+    display: none;
+  }
+  .itemDelete {
+    font-size: 0.8rem;
+  }
+  .cartCounter {
+    height: 20px;
+    width: 20px;
+  }
+  .cartCounterNumber {
+    font-size: 0.8rem;
+  }
 }
